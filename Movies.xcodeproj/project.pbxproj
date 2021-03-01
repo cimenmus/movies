@@ -14,7 +14,6 @@
 		10070C9425ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C9325ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift */; };
 		10070C9925ED3E9900BE2DC0 /* GetMovieCastUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C9825ED3E9900BE2DC0 /* GetMovieCastUseCase.swift */; };
 		1043A2F425EBD68B00E7F675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A2F325EBD68B00E7F675 /* AppDelegate.swift */; };
-		1043A2F825EBD68B00E7F675 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A2F725EBD68B00E7F675 /* ViewController.swift */; };
 		1043A2FB25EBD68B00E7F675 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1043A2F925EBD68B00E7F675 /* Main.storyboard */; };
 		1043A2FD25EBD68C00E7F675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1043A2FC25EBD68C00E7F675 /* Assets.xcassets */; };
 		1043A30025EBD68C00E7F675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1043A2FE25EBD68C00E7F675 /* LaunchScreen.storyboard */; };
@@ -103,7 +102,6 @@
 		10070C9825ED3E9900BE2DC0 /* GetMovieCastUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieCastUseCase.swift; sourceTree = "<group>"; };
 		1043A2F025EBD68B00E7F675 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1043A2F325EBD68B00E7F675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1043A2F725EBD68B00E7F675 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1043A2FA25EBD68B00E7F675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1043A2FC25EBD68C00E7F675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1043A2FF25EBD68C00E7F675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 				1043A33C25EBDD7300E7F675 /* ui */,
 				1043A33B25EBDD5C00E7F675 /* di */,
 				1043A2F325EBD68B00E7F675 /* AppDelegate.swift */,
-				1043A2F725EBD68B00E7F675 /* ViewController.swift */,
 				1043A2F925EBD68B00E7F675 /* Main.storyboard */,
 				1043A2FC25EBD68C00E7F675 /* Assets.xcassets */,
 				1043A2FE25EBD68C00E7F675 /* LaunchScreen.storyboard */,
@@ -847,7 +844,6 @@
 				1043A42025EBEDCD00E7F675 /* DependencyManager.swift in Sources */,
 				1043A3BF25EBE7A500E7F675 /* MovieDataSource.swift in Sources */,
 				1043A41B25EBED6800E7F675 /* UseCaseAssembly.swift in Sources */,
-				1043A2F825EBD68B00E7F675 /* ViewController.swift in Sources */,
 				1043A3D825EBEA5C00E7F675 /* PersonRepository.swift in Sources */,
 				1043A3A425EBE57B00E7F675 /* PersonDatabaseClient.swift in Sources */,
 				1043A36A25EBDF1000E7F675 /* BaseApiClient.swift in Sources */,

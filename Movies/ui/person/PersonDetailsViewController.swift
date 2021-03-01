@@ -24,7 +24,7 @@ class PersonDetailsViewController: BaseViewController {
     
     override func initLogic() {
         super.initLogic()
-        viewModel.getPersonDetails(personId: personId)
+        viewModel.getPersonDetails(personId: 1234)
     }
     
 }
