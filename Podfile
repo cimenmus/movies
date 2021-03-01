@@ -9,6 +9,7 @@ target 'Movies' do
 
   # Networking
   pod 'Alamofire', '~> 5.2'
+  pod 'AlamofireNetworkActivityLogger', '~> 3.4'
     
   # Reactive Extensions
   pod 'RxSwift'
