@@ -11,8 +11,8 @@ import UIKit
 class PersonDetailsViewController: BaseViewController {
     
     // dependencies are injected by Dependency Injetion
-    var personId: Int!
     var viewModel: PersonDetailsViewModel!
+    var personId: Int!
     
     override func initViews() {
         super.initViews()

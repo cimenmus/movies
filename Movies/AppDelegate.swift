@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setRootViewController(){
-        let vc = DependencyManager.shared.resolve(type: PopularMoviesViewController.self)
+        let vc = DependencyManager.shared.resolve(type: PersonDetailsViewController.self)
         window?.rootViewController = UINavigationController(rootViewController: vc)
     }
 }

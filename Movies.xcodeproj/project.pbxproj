@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10070C7525ED36A100BE2DC0 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C7425ED36A100BE2DC0 /* UseCase.swift */; };
+		10070C7D25ED36C200BE2DC0 /* ResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C7C25ED36C200BE2DC0 /* ResultUseCase.swift */; };
+		10070C8A25ED390E00BE2DC0 /* GetPersonDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C8925ED390E00BE2DC0 /* GetPersonDetailsUseCase.swift */; };
+		10070C8F25ED3ACA00BE2DC0 /* RxUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C8E25ED3ACA00BE2DC0 /* RxUseCase.swift */; };
+		10070C9425ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C9325ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift */; };
+		10070C9925ED3E9900BE2DC0 /* GetMovieCastUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10070C9825ED3E9900BE2DC0 /* GetMovieCastUseCase.swift */; };
 		1043A2F425EBD68B00E7F675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A2F325EBD68B00E7F675 /* AppDelegate.swift */; };
 		1043A2F825EBD68B00E7F675 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A2F725EBD68B00E7F675 /* ViewController.swift */; };
 		1043A2FB25EBD68B00E7F675 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1043A2F925EBD68B00E7F675 /* Main.storyboard */; };
@@ -89,6 +95,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10070C7425ED36A100BE2DC0 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		10070C7C25ED36C200BE2DC0 /* ResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultUseCase.swift; sourceTree = "<group>"; };
+		10070C8925ED390E00BE2DC0 /* GetPersonDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPersonDetailsUseCase.swift; sourceTree = "<group>"; };
+		10070C8E25ED3ACA00BE2DC0 /* RxUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUseCase.swift; sourceTree = "<group>"; };
+		10070C9325ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPopularMoviesUseCase.swift; sourceTree = "<group>"; };
+		10070C9825ED3E9900BE2DC0 /* GetMovieCastUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieCastUseCase.swift; sourceTree = "<group>"; };
 		1043A2F025EBD68B00E7F675 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1043A2F325EBD68B00E7F675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1043A2F725EBD68B00E7F675 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +205,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10070C6925ED308100BE2DC0 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				10070C7425ED36A100BE2DC0 /* UseCase.swift */,
+				10070C7C25ED36C200BE2DC0 /* ResultUseCase.swift */,
+				10070C8E25ED3ACA00BE2DC0 /* RxUseCase.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		10070C6A25ED309A00BE2DC0 /* movie */ = {
+			isa = PBXGroup;
+			children = (
+				10070C9325ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift */,
+				10070C9825ED3E9900BE2DC0 /* GetMovieCastUseCase.swift */,
+			);
+			path = movie;
+			sourceTree = "<group>";
+		};
+		10070C6B25ED30A000BE2DC0 /* person */ = {
+			isa = PBXGroup;
+			children = (
+				10070C8925ED390E00BE2DC0 /* GetPersonDetailsUseCase.swift */,
+			);
+			path = person;
+			sourceTree = "<group>";
+		};
 		1043A2E725EBD68B00E7F675 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +324,9 @@
 		1043A33E25EBDD8100E7F675 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				10070C6B25ED30A000BE2DC0 /* person */,
+				10070C6A25ED309A00BE2DC0 /* movie */,
+				10070C6925ED308100BE2DC0 /* base */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -796,6 +838,7 @@
 				1043A3A925EBE5DB00E7F675 /* MovieDatabaseClient.swift in Sources */,
 				1043A35625EBDE7900E7F675 /* NetworkUtils.swift in Sources */,
 				1043A3C725EBE82C00E7F675 /* MovieRemoteDataSource.swift in Sources */,
+				10070C9425ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift in Sources */,
 				1043A43D25EBEF0400E7F675 /* Result.swift in Sources */,
 				1043A3B825EBE73A00E7F675 /* PersonLocalDataSource.swift in Sources */,
 				1043A3E525EBEAD500E7F675 /* MovieRepository.swift in Sources */,
@@ -808,6 +851,7 @@
 				1043A3D825EBEA5C00E7F675 /* PersonRepository.swift in Sources */,
 				1043A3A425EBE57B00E7F675 /* PersonDatabaseClient.swift in Sources */,
 				1043A36A25EBDF1000E7F675 /* BaseApiClient.swift in Sources */,
+				10070C7525ED36A100BE2DC0 /* UseCase.swift in Sources */,
 				1043A35B25EBDE9400E7F675 /* AppError.swift in Sources */,
 				1043A49B25EBF41700E7F675 /* MovieDetailsViewModel.swift in Sources */,
 				1043A38B25EBE04A00E7F675 /* MovieModel.swift in Sources */,
@@ -816,10 +860,13 @@
 				1043A3EA25EBEB0900E7F675 /* MovieRepositoryImpl.swift in Sources */,
 				1043A39025EBE08A00E7F675 /* PersonModel.swift in Sources */,
 				1043A3CC25EBE94700E7F675 /* MovieLocalDataSource.swift in Sources */,
+				10070C8A25ED390E00BE2DC0 /* GetPersonDetailsUseCase.swift in Sources */,
+				10070C9925ED3E9900BE2DC0 /* GetMovieCastUseCase.swift in Sources */,
 				1043A47225EBF0A100E7F675 /* PopularMoviesViewController.swift in Sources */,
 				1043A41125EBECF600E7F675 /* DatabaseAssembly.swift in Sources */,
 				1043A39A25EBE30C00E7F675 /* MovieCastApiResponse.swift in Sources */,
 				1043A36F25EBDF3F00E7F675 /* ApiError.swift in Sources */,
+				10070C7D25ED36C200BE2DC0 /* ResultUseCase.swift in Sources */,
 				1043A48625EBF0ED00E7F675 /* PersonDetailsViewController.swift in Sources */,
 				1043A43825EBEECD00E7F675 /* DataObserver.swift in Sources */,
 				1043A36525EBDEDC00E7F675 /* Constants.swift in Sources */,
@@ -835,6 +882,7 @@
 				1043A37D25EBDF9500E7F675 /* PersonApiClient.swift in Sources */,
 				1043A3D125EBEA0C00E7F675 /* BaseRepository.swift in Sources */,
 				1043A3F825EBEC3100E7F675 /* DataSourceAssembly.swift in Sources */,
+				10070C8F25ED3ACA00BE2DC0 /* RxUseCase.swift in Sources */,
 				1043A3AE25EBE6DF00E7F675 /* PersonDataSource.swift in Sources */,
 				1043A47C25EBF0CE00E7F675 /* MovieDetailsViewController.swift in Sources */,
 			);

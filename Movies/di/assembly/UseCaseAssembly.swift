@@ -14,6 +14,12 @@ class UseCaseAssembly: Assembly {
     
     func assemble(container: Container) {
         
-        //container.autoregister(PersonDetailViewModel.self, initializer: PersonDetailViewModel.init)
+        // Movie
+        container.autoregister(GetPopularMoviesUseCase.self, initializer: GetPopularMoviesUseCase.init)
+        container.autoregister(GetMovieCastUseCase.self, initializer: GetMovieCastUseCase.init)
+        
+        // Person
+        container.autoregister(GetPersonDetailsUseCase.self, initializer: GetPersonDetailsUseCase.init)
+        
     }
 }

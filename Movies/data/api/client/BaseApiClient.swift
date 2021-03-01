@@ -31,8 +31,8 @@ class BaseApiClient {
     
     // converts api error to AppError model
     private func getAppError<T: Codable>(apiResponse: DataResponse<T, AFError>) -> AppError {
-        let responseCode = apiResponse.response?.statusCode ?? ErrorType.UNKNOWN.rawValue
-        let errorType = ErrorType(rawValue: responseCode) ?? ErrorType.UNKNOWN
+        let responseCode = apiResponse.response?.statusCode ?? AppError.ErrorType.UNKNOWN.rawValue
+        let errorType = AppError.ErrorType(rawValue: responseCode) ?? AppError.ErrorType.UNKNOWN
         let errorMessage = getErrorMessage(apiResponse: apiResponse)
         return AppError(type: errorType, message: errorMessage)
     }

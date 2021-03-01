@@ -14,7 +14,7 @@ class PersonDatabaseClient {
     // Database is not implemented yet
     func getPersonDetails(personId: Int) -> Single<PersonModel> {
         return Single<PersonModel>.create { single in
-            let error = AppError(type: ErrorType.DB_ITEM_NOT_FOUND, message: "Database is not implemented yet.")
+            let error = AppError(type: AppError.ErrorType.DB_ITEM_NOT_FOUND, message: "Database is not implemented yet.")
             single(.failure(error))
             return Disposables.create {
                 

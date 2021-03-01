@@ -11,22 +11,20 @@ import RxSwift
 struct PersonDetailsViewModel {
         
     // dependencies are injected by Dependency Injetion
-    private let personRepository: PersonRepository!
+    private let getPersonDetailsUseCase: GetPersonDetailsUseCase!
     private let disposeBag: DisposeBag!  // to dispose observable on view model instance is remove from memory
     
     let personDetailsObservable = PublishSubject<Result<PersonModel>>()
     
-    // will be called by Dependency Injection
-    init(personRepository: PersonRepository,
+    init(getPersonDetailsUseCase: GetPersonDetailsUseCase,
          disposeBag: DisposeBag) {
-        self.personRepository = personRepository
+        self.getPersonDetailsUseCase = getPersonDetailsUseCase
         self.disposeBag = disposeBag
     }
     
     func getPersonDetails(personId: Int) {
         personDetailsObservable.onNext(Result.loading())
-        personRepository
-            .getPersonDetails(personId: personId)
+        getPersonDetailsUseCase.invoke(parameters: PersonDetailParameter(personId: personId))
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onSuccess: { person in

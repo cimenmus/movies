@@ -11,16 +11,16 @@ import RxSwift
 class PopularMoviesViewModel {
     
     // dependencies are injected by Dependency Injetion
-    private let movieRepository: MovieRepository!
+    private let getPopularMoviesUseCase: GetPopularMoviesUseCase!
     private let disposeBag: DisposeBag! // to dispose observable on view model instance is remove from memory
         
     let popularMoviesObservable = PublishSubject<Result<[MovieModel]>>()
     private var currentPage = 0
     
     // will be called by Dependency Injection
-    init(movieRepository: MovieRepository,
+    init(getPopularMoviesUseCase: GetPopularMoviesUseCase,
          disposeBag: DisposeBag) {
-        self.movieRepository = movieRepository
+        self.getPopularMoviesUseCase = getPopularMoviesUseCase
         self.disposeBag = disposeBag
     }
     
@@ -29,7 +29,7 @@ class PopularMoviesViewModel {
             popularMoviesObservable.onNext(Result.loading())
         }
         let nextPage = currentPage + 1
-        movieRepository.getPopularMovies(page: nextPage)
+        getPopularMoviesUseCase.invoke(parameters: PopularMoviesParameter(page: nextPage))
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onSuccess: { popularMovies in
