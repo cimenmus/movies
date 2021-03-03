@@ -7,98 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-<<<<<<< HEAD
-            uuid = "6C47BD1E-0816-4551-867F-0746B41ACBB7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "getNextPopularMovies(showLoading:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "20513B21-43CB-4B4B-8ADD-892F352A4907"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getNextPopularMovies(showLoading:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0A1058E7-B714-4298-85B7-45298BCFE85E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/data/api/client/BaseApiClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "request(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D9F80930-411A-4783-AF6A-44667F997988"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/data/api/client/BaseApiClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "request(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "243A9C2B-CE8D-4A1C-B79B-1A05FC1C448F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/data/api/client/BaseApiClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getErrorMessage(apiResponse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2AAB74AC-75B8-4D85-8ED9-83A3DCE61B17"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/data/api/client/BaseApiClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getErrorMessage(apiResponse:)"
-=======
             uuid = "AB802C96-6A59-4DA6-90D6-12A16C96E79E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -109,77 +17,44 @@
             startingLineNumber = "75"
             endingLineNumber = "75"
             landmarkName = "getApiError(apiResponse:)"
->>>>>>> test
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-<<<<<<< HEAD
-            uuid = "B76C6E49-CB59-4584-B7FF-2B9274539F86"
-=======
             uuid = "D91B71D4-83E7-4E4E-A6EC-BCCBA1D08C15"
->>>>>>> test
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Movies/data/api/client/BaseApiClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "getErrorMessage(apiResponse:)"
-=======
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "getApiError(apiResponse:)"
->>>>>>> test
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-<<<<<<< HEAD
-            uuid = "40949CA7-43B3-408C-AD4B-7A35FEC43B18"
-=======
             uuid = "AA77A71C-EDFF-433F-86F8-CD81DA42EFD3"
->>>>>>> test
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Movies/data/api/client/BaseApiClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "getErrorMessage(apiResponse:)"
-=======
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "getApiError(apiResponse:)"
->>>>>>> test
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-<<<<<<< HEAD
-            uuid = "AB802C96-6A59-4DA6-90D6-12A16C96E79E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/data/api/client/BaseApiClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "getApiError(apiResponse:)"
-=======
             uuid = "FAD8C861-B914-44E6-872E-990608367ABB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -190,59 +65,38 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "getNextPopularMovies(showLoading:)"
->>>>>>> test
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-<<<<<<< HEAD
-            uuid = "D91B71D4-83E7-4E4E-A6EC-BCCBA1D08C15"
-=======
             uuid = "DDD088AD-A071-498E-A90B-021E314FA2D3"
->>>>>>> test
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/data/api/client/BaseApiClient.swift"
+            filePath = "Movies/ui/person/PersonDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "getApiError(apiResponse:)"
-=======
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "getPersonDetails(personId:)"
->>>>>>> test
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-<<<<<<< HEAD
-            uuid = "AA77A71C-EDFF-433F-86F8-CD81DA42EFD3"
-=======
             uuid = "C01BCB1A-B743-4D86-AAFC-1E1DC5E246D1"
->>>>>>> test
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/data/api/client/BaseApiClient.swift"
+            filePath = "Movies/ui/person/PersonDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "getApiError(apiResponse:)"
-=======
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "getPersonDetails(personId:)"
->>>>>>> test
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -275,6 +129,22 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "getCastOfMovie(movieId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A899F66-273F-49F7-B332-EC0AD29C990E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getNextPopularMovies(showLoading:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

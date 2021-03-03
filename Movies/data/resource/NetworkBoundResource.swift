@@ -1,55 +1,55 @@
 //
-//  BaseRepository.swift
+//  NetworkBoundResource.swift
 //  Movies
 //
-//  Created by mustafa içmen on 28.02.2021.
+//  Created by mustafa içmen on 3.03.2021.
 //
 
 import Foundation
 import RxSwift
-import RxCocoa
 
-class BaseRepository {
+class NetworkBoundResource<ResultType> {
+            
+    private var loadFromNetwork: () -> Single<ResultType>
+    private var loadFromDb: () -> Single<ResultType>
+    private var saveToDb: (ResultType) -> Void
     
-    /**
-     that method will be use to fetch data
-     takes 3 closure parameters to fetch data from network, insert data to database and fetch data from database
-     first tries to fetch data from network
-     if fetching network succeed, the fetched data will be inserted into database, then data is returned
-     if network is not available, the data will be fetched from database and then returned
-     */
-    func resource<ResultType>(loadFromNetwork: @escaping () -> Single<ResultType>,
-                              loadFromDb: @escaping () -> Single<ResultType>,
-                              saveToDb: @escaping (ResultType) -> Void
-    ) -> Single<ResultType> {
-        
+    init(loadFromNetwork: @escaping () -> Single<ResultType>,
+         loadFromDb: @escaping () -> Single<ResultType>,
+         saveToDb: @escaping (ResultType) -> Void) {
+        self.loadFromNetwork = loadFromNetwork
+        self.loadFromDb = loadFromDb
+        self.saveToDb = saveToDb
+    }
+    
+    func execute<ResultType>() -> Single<ResultType> {
         return Single.create { single in
             var error: AppError?
             var dbDisposable: Disposable?
             var networkDisposable: Disposable?
             networkDisposable =
-                loadFromNetwork()
-                .observeOn(MainScheduler.instance)
+                self.loadFromNetwork()
+                .observe(on: MainScheduler.instance)
                 .subscribe(
                     
                     onSuccess: { networkData in
-                        saveToDb(networkData)
-                        single(.success(networkData))
+                        self.saveToDb(networkData)
+                        single(.success(networkData as! ResultType))
                         networkDisposable?.dispose()
                     },
-
-                    onError: { networkError in
+                    
+                    onFailure: { networkError in
                         error = networkError.toAppError()
                         dbDisposable =
-                            loadFromDb()
-                            .observeOn(MainScheduler.instance)
+                            self.loadFromDb()
+                            .observe(on: MainScheduler.instance)
                             .subscribe(
                                 onSuccess: { dbData in
-                                    single(.success(dbData))
+                                    single(.success(dbData as! ResultType))
                                     networkDisposable?.dispose()
                                     dbDisposable?.dispose()
                                 },
-                                onError: { dbError in
+                                onFailure: { dbError in
                                     if error == nil {
                                         error = dbError.toAppError()
                                     }
@@ -62,6 +62,6 @@ class BaseRepository {
                 )
             return Disposables.create()
         }
-    }
+   }
     
 }

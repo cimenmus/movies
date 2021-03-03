@@ -41,7 +41,6 @@
 		1043A3BF25EBE7A500E7F675 /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3BE25EBE7A500E7F675 /* MovieDataSource.swift */; };
 		1043A3C725EBE82C00E7F675 /* MovieRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3C625EBE82C00E7F675 /* MovieRemoteDataSource.swift */; };
 		1043A3CC25EBE94700E7F675 /* MovieLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3CB25EBE94700E7F675 /* MovieLocalDataSource.swift */; };
-		1043A3D125EBEA0C00E7F675 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3D025EBEA0C00E7F675 /* BaseRepository.swift */; };
 		1043A3D825EBEA5C00E7F675 /* PersonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3D725EBEA5C00E7F675 /* PersonRepository.swift */; };
 		1043A3E025EBEA7C00E7F675 /* PersonRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3DF25EBEA7C00E7F675 /* PersonRepositoryImpl.swift */; };
 		1043A3E525EBEAD500E7F675 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3E425EBEAD500E7F675 /* MovieRepository.swift */; };
@@ -71,6 +70,7 @@
 		1043A48B25EBF0F600E7F675 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A48A25EBF0F600E7F675 /* PersonDetailsViewModel.swift */; };
 		1043A49B25EBF41700E7F675 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A49A25EBF41700E7F675 /* MovieDetailsViewModel.swift */; };
 		1091960925EFCD5F00402458 /* DatabaseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1091960825EFCD5F00402458 /* DatabaseResource.swift */; };
+		1091965225EFE74B00402458 /* NetworkBoundResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1091965125EFE74B00402458 /* NetworkBoundResource.swift */; };
 		2DC362B00F18E309EB1AD48A /* Pods_MoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D012982D5DF5310518060B8 /* Pods_MoviesTests.framework */; };
 		5EF300E38F400CA1169DA169 /* Pods_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2315B5277DE0BDDD224706DE /* Pods_Movies.framework */; };
 		A47CC2552DEC37C59CD2EB54 /* Pods_Movies_MoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424E30B7563599278309314 /* Pods_Movies_MoviesUITests.framework */; };
@@ -134,7 +134,6 @@
 		1043A3BE25EBE7A500E7F675 /* MovieDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
 		1043A3C625EBE82C00E7F675 /* MovieRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRemoteDataSource.swift; sourceTree = "<group>"; };
 		1043A3CB25EBE94700E7F675 /* MovieLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLocalDataSource.swift; sourceTree = "<group>"; };
-		1043A3D025EBEA0C00E7F675 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		1043A3D725EBEA5C00E7F675 /* PersonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRepository.swift; sourceTree = "<group>"; };
 		1043A3DF25EBEA7C00E7F675 /* PersonRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRepositoryImpl.swift; sourceTree = "<group>"; };
 		1043A3E425EBEAD500E7F675 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
@@ -164,6 +163,7 @@
 		1043A48A25EBF0F600E7F675 /* PersonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModel.swift; sourceTree = "<group>"; };
 		1043A49A25EBF41700E7F675 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		1091960825EFCD5F00402458 /* DatabaseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResource.swift; sourceTree = "<group>"; };
+		1091965125EFE74B00402458 /* NetworkBoundResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBoundResource.swift; sourceTree = "<group>"; };
 		2315B5277DE0BDDD224706DE /* Pods_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6C5F153D7ECC78FC9027ED /* Pods-Movies-MoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies-MoviesUITests.release.xcconfig"; path = "Target Support Files/Pods-Movies-MoviesUITests/Pods-Movies-MoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7896DAE5848E694163F2EE15 /* Pods-Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies.debug.xcconfig"; path = "Target Support Files/Pods-Movies/Pods-Movies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +235,7 @@
 			children = (
 				10318A2725EE9C07005213A0 /* NetworkResource.swift */,
 				1091960825EFCD5F00402458 /* DatabaseResource.swift */,
+				1091965125EFE74B00402458 /* NetworkBoundResource.swift */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -372,7 +373,6 @@
 			children = (
 				1043A3D625EBEA4900E7F675 /* movie */,
 				1043A3D525EBEA4300E7F675 /* person */,
-				1043A3D025EBEA0C00E7F675 /* BaseRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -858,6 +858,7 @@
 				1043A49B25EBF41700E7F675 /* MovieDetailsViewModel.swift in Sources */,
 				1043A38B25EBE04A00E7F675 /* MovieModel.swift in Sources */,
 				1091960925EFCD5F00402458 /* DatabaseResource.swift in Sources */,
+				1091965225EFE74B00402458 /* NetworkBoundResource.swift in Sources */,
 				1043A34D25EBDE4600E7F675 /* StringExt.swift in Sources */,
 				1043A47725EBF0B600E7F675 /* PopularMoviesViewModel.swift in Sources */,
 				1043A3EA25EBEB0900E7F675 /* MovieRepositoryImpl.swift in Sources */,
@@ -884,7 +885,6 @@
 				1043A40C25EBECC700E7F675 /* ViewModelAssembly.swift in Sources */,
 				1043A2F425EBD68B00E7F675 /* AppDelegate.swift in Sources */,
 				1043A37D25EBDF9500E7F675 /* PersonApiClient.swift in Sources */,
-				1043A3D125EBEA0C00E7F675 /* BaseRepository.swift in Sources */,
 				1043A3F825EBEC3100E7F675 /* DataSourceAssembly.swift in Sources */,
 				10070C8F25ED3ACA00BE2DC0 /* RxUseCase.swift in Sources */,
 				1043A3AE25EBE6DF00E7F675 /* PersonDataSource.swift in Sources */,

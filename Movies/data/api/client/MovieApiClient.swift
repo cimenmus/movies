@@ -12,12 +12,10 @@ import RxSwift
 class MovieApiClient {
 
     func getPopularMovies(page: Int) -> Single<[MovieModel]> {
-
         return NetworkResource<PopularMoviesApiResponse, [MovieModel]>(
             networkRequest: ApiRouter.getPopularMovies(page: page),
             responseParser: { response in return response.results ?? [MovieModel]()}
         ).execute()
-            
     }
     
     func getCastOfMovie(movieId: Int) -> Single<[MovieCastModel]> {
