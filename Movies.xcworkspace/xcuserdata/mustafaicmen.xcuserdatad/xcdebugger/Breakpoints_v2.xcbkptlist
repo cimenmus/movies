@@ -7,163 +7,87 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0C6FD373-9434-4E81-A728-918BCB284D2D"
+            uuid = "AB802C96-6A59-4DA6-90D6-12A16C96E79E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
+            filePath = "Movies/data/api/client/BaseApiClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "PopularMoviesViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "0C6FD373-9434-4E81-A728-918BCB284D2D - be01d3c8a6466860"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Movies.PopularMoviesViewController.viewModel.getter : Swift.Optional&lt;Movies.PopularMoviesViewModel&gt;"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "122">
-               </Location>
-               <Location
-                  uuid = "0C6FD373-9434-4E81-A728-918BCB284D2D - c23003fcc04fedcc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Movies.PopularMoviesViewController.viewModel.setter : Swift.Optional&lt;Movies.PopularMoviesViewModel&gt;"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "148">
-               </Location>
-               <Location
-                  uuid = "0C6FD373-9434-4E81-A728-918BCB284D2D - fe469165d9ebb537"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Movies.PopularMoviesViewController.viewModel.modify : Swift.Optional&lt;Movies.PopularMoviesViewModel&gt;"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  uuid = "0C6FD373-9434-4E81-A728-918BCB284D2D - 6b3aeff737a2ef6c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Movies.PopularMoviesViewController.viewModel.modify : Swift.Optional&lt;Movies.PopularMoviesViewModel&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "0C6FD373-9434-4E81-A728-918BCB284D2D - ea33c97f00c78f57"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Movies.PopularMoviesViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Movies.PopularMoviesViewController"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "146">
-               </Location>
-               <Location
-                  uuid = "0C6FD373-9434-4E81-A728-918BCB284D2D - 43e94ea85476fee8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Movies.PopularMoviesViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Movies.PopularMoviesViewController&gt;"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "102">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "626036CA-3A38-436B-81F2-3E3D7299FA0A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "initViews()"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getApiError(apiResponse:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DFB58DE5-98C3-44BE-99AA-C3B90EA7DB5C"
+            uuid = "D91B71D4-83E7-4E4E-A6EC-BCCBA1D08C15"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
+            filePath = "Movies/data/api/client/BaseApiClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "initObservers()"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "getApiError(apiResponse:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FDFC996C-5439-49EB-ACC7-3974435E156C"
+            uuid = "AA77A71C-EDFF-433F-86F8-CD81DA42EFD3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
+            filePath = "Movies/data/api/client/BaseApiClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "initLogic()"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "getApiError(apiResponse:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B7FE5E0C-053D-44EF-83FF-23BD3897ED82"
+            uuid = "FAD8C861-B914-44E6-872E-990608367ABB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getNextPopularMovies(showLoading:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDD088AD-A071-498E-A90B-021E314FA2D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/ui/person/PersonDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getPersonDetails(personId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C01BCB1A-B743-4D86-AAFC-1E1DC5E246D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -179,16 +103,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7245E78F-4DF2-4A3F-BE86-0DE0F1932AB2"
+            uuid = "340E8396-7725-4EF5-89A2-627CDE6A2FA5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/ui/person/PersonDetailsViewModel.swift"
+            filePath = "Movies/ui/movie/moviedetail/MovieDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "getPersonDetails(personId:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getCastOfMovie(movieId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BEC4D44-1E54-43BB-837E-1B5645053237"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/ui/movie/moviedetail/MovieDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getCastOfMovie(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
