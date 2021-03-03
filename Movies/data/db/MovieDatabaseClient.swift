@@ -12,24 +12,16 @@ import RxSwift
 class MovieDatabaseClient {
     
     func getPopularMovies(page: Int) -> Single<[MovieModel]> {
-        return Single<[MovieModel]>.create { single in
-            let error = AppError(type: AppError.ErrorType.DB_ITEM_NOT_FOUND, message: "Database is not implemented yet.")
-            single(.failure(error))
-            return Disposables.create {
-                
-            }
-        }
+        return DatabaseResource<[MovieModel]>(
+            dbRequest: { return nil }
+        ).execute()
     }
     
     // Database is not implemented yet
     func getCastOfMovie(movieId: Int) -> Single<[MovieCastModel]> {
-        return Single<[MovieCastModel]>.create { single in
-            let error = AppError(type: AppError.ErrorType.DB_ITEM_NOT_FOUND, message: "Database is not implemented yet.")
-            single(.failure(error))
-            return Disposables.create {
-                
-            }
-        }
+        return DatabaseResource<[MovieCastModel]>(
+            dbRequest: { return nil }
+        ).execute()
     }
     
     func saveMovies(movies: [MovieModel]) {

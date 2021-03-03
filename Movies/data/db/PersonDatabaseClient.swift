@@ -11,15 +11,10 @@ import RxSwift
 // makes Person Database operations like read and insert
 class PersonDatabaseClient {
         
-    // Database is not implemented yet
     func getPersonDetails(personId: Int) -> Single<PersonModel> {
-        return Single<PersonModel>.create { single in
-            let error = AppError(type: AppError.ErrorType.DB_ITEM_NOT_FOUND, message: "Database is not implemented yet.")
-            single(.failure(error))
-            return Disposables.create {
-                
-            }
-        }
+        return DatabaseResource<PersonModel>(
+            dbRequest: { return nil }
+        ).execute()
     }
     
     func savePerson(person: PersonModel) {

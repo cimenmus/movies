@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func startNetworkLogging(){
         NetworkActivityLogger.shared.level = .debug
         NetworkActivityLogger.shared.startLogging()
+
     }
 }
 

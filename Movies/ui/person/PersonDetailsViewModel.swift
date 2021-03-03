@@ -25,12 +25,12 @@ struct PersonDetailsViewModel {
     func getPersonDetails(personId: Int) {
         personDetailsObservable.onNext(Result.loading())
         getPersonDetailsUseCase.invoke(parameters: PersonDetailParameter(personId: personId))
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .subscribe(
                 onSuccess: { person in
                     personDetailsObservable.onNext(Result.success(data: person))
                 },
-                onError: { error in
+                onFailure: { error in
                     personDetailsObservable.onNext(Result.error(error: error.toAppError()))
                 }
             )

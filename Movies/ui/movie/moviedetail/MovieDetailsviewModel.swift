@@ -26,12 +26,12 @@ class MovieDetailsViewModel {
     func getCastOfMovie(movieId: Int) {
         movieCastObservable.onNext(Result.loading())
         getMovieCastUseCase.invoke(parameters: MovieCastParameter(movieId: movieId))
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .subscribe(
                 onSuccess: { movieCast in
                     self.movieCastObservable.onNext(Result.success(data: movieCast))
                 },
-                onError: { error in
+                onFailure: { error in
                     self.movieCastObservable.onNext(Result.error(error: error.toAppError()))
                 }
             )

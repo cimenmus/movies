@@ -30,13 +30,13 @@ class PopularMoviesViewModel {
         }
         let nextPage = currentPage + 1
         getPopularMoviesUseCase.invoke(parameters: PopularMoviesParameter(page: nextPage))
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .subscribe(
                 onSuccess: { popularMovies in
                     self.popularMoviesObservable.onNext(Result.success(data: popularMovies))
                     self.currentPage += 1
                 },
-                onError: { error in
+                onFailure: { error in
                     self.popularMoviesObservable.onNext(Result.error(error: error.toAppError()))
                 }
             )

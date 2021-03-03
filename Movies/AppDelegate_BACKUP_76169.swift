@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initWindow()
         setRootViewController()
+<<<<<<< HEAD
+        logNetwork()
+=======
         startNetworkLogging()
+>>>>>>> test
         return true
     }
     
@@ -31,9 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: vc)
     }
     
+<<<<<<< HEAD
+    private func logNetwork(){
+        NetworkActivityLogger.shared.startLogging()
+        NetworkActivityLogger.shared.level = .debug
+=======
     private func startNetworkLogging(){
         NetworkActivityLogger.shared.level = .debug
         NetworkActivityLogger.shared.startLogging()
+
+>>>>>>> test
     }
 }
 
