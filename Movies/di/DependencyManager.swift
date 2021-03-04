@@ -15,9 +15,7 @@ class DependencyManager {
     static let shared = DependencyManager()
     
     private let assembler = Assembler([
-        ApiAssembly(),
         DataSourceAssembly(),
-        DatabaseAssembly(),
         DisposableAssembly(),
         RepositoryAssembly(),
         ViewControllerAssembly(),

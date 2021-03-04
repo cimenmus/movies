@@ -25,16 +25,12 @@
 		1043A36025EBDEB100E7F675 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A35F25EBDEB100E7F675 /* ErrorType.swift */; };
 		1043A36525EBDEDC00E7F675 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A36425EBDEDC00E7F675 /* Constants.swift */; };
 		1043A36F25EBDF3F00E7F675 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A36E25EBDF3F00E7F675 /* ApiError.swift */; };
-		1043A37525EBDF7B00E7F675 /* MovieApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A37425EBDF7B00E7F675 /* MovieApiClient.swift */; };
-		1043A37D25EBDF9500E7F675 /* PersonApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A37C25EBDF9500E7F675 /* PersonApiClient.swift */; };
 		1043A38325EBE00800E7F675 /* PopularMoviesApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A38225EBE00800E7F675 /* PopularMoviesApiResponse.swift */; };
 		1043A38B25EBE04A00E7F675 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A38A25EBE04A00E7F675 /* MovieModel.swift */; };
 		1043A39025EBE08A00E7F675 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A38F25EBE08A00E7F675 /* PersonModel.swift */; };
 		1043A39525EBE27C00E7F675 /* MovieCastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A39425EBE27C00E7F675 /* MovieCastModel.swift */; };
 		1043A39A25EBE30C00E7F675 /* MovieCastApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A39925EBE30C00E7F675 /* MovieCastApiResponse.swift */; };
 		1043A39F25EBE35C00E7F675 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A39E25EBE35C00E7F675 /* ApiRouter.swift */; };
-		1043A3A425EBE57B00E7F675 /* PersonDatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3A325EBE57B00E7F675 /* PersonDatabaseClient.swift */; };
-		1043A3A925EBE5DB00E7F675 /* MovieDatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3A825EBE5DB00E7F675 /* MovieDatabaseClient.swift */; };
 		1043A3AE25EBE6DF00E7F675 /* PersonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3AD25EBE6DF00E7F675 /* PersonDataSource.swift */; };
 		1043A3B325EBE70C00E7F675 /* PersonRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3B225EBE70C00E7F675 /* PersonRemoteDataSource.swift */; };
 		1043A3B825EBE73A00E7F675 /* PersonLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3B725EBE73A00E7F675 /* PersonLocalDataSource.swift */; };
@@ -45,13 +41,11 @@
 		1043A3E025EBEA7C00E7F675 /* PersonRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3DF25EBEA7C00E7F675 /* PersonRepositoryImpl.swift */; };
 		1043A3E525EBEAD500E7F675 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3E425EBEAD500E7F675 /* MovieRepository.swift */; };
 		1043A3EA25EBEB0900E7F675 /* MovieRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3E925EBEB0900E7F675 /* MovieRepositoryImpl.swift */; };
-		1043A3F025EBEC0A00E7F675 /* ApiAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3EF25EBEC0A00E7F675 /* ApiAssembly.swift */; };
 		1043A3F825EBEC3100E7F675 /* DataSourceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3F725EBEC3100E7F675 /* DataSourceAssembly.swift */; };
 		1043A3FD25EBEC6300E7F675 /* DisposableAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A3FC25EBEC6300E7F675 /* DisposableAssembly.swift */; };
 		1043A40225EBEC7D00E7F675 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A40125EBEC7D00E7F675 /* RepositoryAssembly.swift */; };
 		1043A40725EBECA900E7F675 /* UtilsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A40625EBECA900E7F675 /* UtilsAssembly.swift */; };
 		1043A40C25EBECC700E7F675 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A40B25EBECC700E7F675 /* ViewModelAssembly.swift */; };
-		1043A41125EBECF600E7F675 /* DatabaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A41025EBECF600E7F675 /* DatabaseAssembly.swift */; };
 		1043A41625EBED3000E7F675 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A41525EBED3000E7F675 /* ViewControllerAssembly.swift */; };
 		1043A41B25EBED6800E7F675 /* UseCaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A41A25EBED6800E7F675 /* UseCaseAssembly.swift */; };
 		1043A42025EBEDCD00E7F675 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A41F25EBEDCD00E7F675 /* DependencyManager.swift */; };
@@ -118,16 +112,12 @@
 		1043A35F25EBDEB100E7F675 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		1043A36425EBDEDC00E7F675 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1043A36E25EBDF3F00E7F675 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		1043A37425EBDF7B00E7F675 /* MovieApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApiClient.swift; sourceTree = "<group>"; };
-		1043A37C25EBDF9500E7F675 /* PersonApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonApiClient.swift; sourceTree = "<group>"; };
 		1043A38225EBE00800E7F675 /* PopularMoviesApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesApiResponse.swift; sourceTree = "<group>"; };
 		1043A38A25EBE04A00E7F675 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		1043A38F25EBE08A00E7F675 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		1043A39425EBE27C00E7F675 /* MovieCastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastModel.swift; sourceTree = "<group>"; };
 		1043A39925EBE30C00E7F675 /* MovieCastApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastApiResponse.swift; sourceTree = "<group>"; };
 		1043A39E25EBE35C00E7F675 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
-		1043A3A325EBE57B00E7F675 /* PersonDatabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDatabaseClient.swift; sourceTree = "<group>"; };
-		1043A3A825EBE5DB00E7F675 /* MovieDatabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatabaseClient.swift; sourceTree = "<group>"; };
 		1043A3AD25EBE6DF00E7F675 /* PersonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataSource.swift; sourceTree = "<group>"; };
 		1043A3B225EBE70C00E7F675 /* PersonRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRemoteDataSource.swift; sourceTree = "<group>"; };
 		1043A3B725EBE73A00E7F675 /* PersonLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonLocalDataSource.swift; sourceTree = "<group>"; };
@@ -138,13 +128,11 @@
 		1043A3DF25EBEA7C00E7F675 /* PersonRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRepositoryImpl.swift; sourceTree = "<group>"; };
 		1043A3E425EBEAD500E7F675 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		1043A3E925EBEB0900E7F675 /* MovieRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepositoryImpl.swift; sourceTree = "<group>"; };
-		1043A3EF25EBEC0A00E7F675 /* ApiAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAssembly.swift; sourceTree = "<group>"; };
 		1043A3F725EBEC3100E7F675 /* DataSourceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceAssembly.swift; sourceTree = "<group>"; };
 		1043A3FC25EBEC6300E7F675 /* DisposableAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableAssembly.swift; sourceTree = "<group>"; };
 		1043A40125EBEC7D00E7F675 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		1043A40625EBECA900E7F675 /* UtilsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsAssembly.swift; sourceTree = "<group>"; };
 		1043A40B25EBECC700E7F675 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
-		1043A41025EBECF600E7F675 /* DatabaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAssembly.swift; sourceTree = "<group>"; };
 		1043A41525EBED3000E7F675 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		1043A41A25EBED6800E7F675 /* UseCaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseAssembly.swift; sourceTree = "<group>"; };
 		1043A41F25EBEDCD00E7F675 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
@@ -322,7 +310,6 @@
 				1043A34325EBDDEA00E7F675 /* source */,
 				1043A34225EBDDE400E7F675 /* repository */,
 				1043A34125EBDDD000E7F675 /* model */,
-				1043A34025EBDDC500E7F675 /* db */,
 				1043A33F25EBDDBE00E7F675 /* api */,
 			);
 			path = data;
@@ -342,20 +329,10 @@
 			isa = PBXGroup;
 			children = (
 				1043A38125EBDFE400E7F675 /* response */,
-				1043A37325EBDF6000E7F675 /* client */,
 				1043A36E25EBDF3F00E7F675 /* ApiError.swift */,
 				1043A39E25EBE35C00E7F675 /* ApiRouter.swift */,
 			);
 			path = api;
-			sourceTree = "<group>";
-		};
-		1043A34025EBDDC500E7F675 /* db */ = {
-			isa = PBXGroup;
-			children = (
-				1043A3A325EBE57B00E7F675 /* PersonDatabaseClient.swift */,
-				1043A3A825EBE5DB00E7F675 /* MovieDatabaseClient.swift */,
-			);
-			path = db;
 			sourceTree = "<group>";
 		};
 		1043A34125EBDDD000E7F675 /* model */ = {
@@ -414,15 +391,6 @@
 			path = util;
 			sourceTree = "<group>";
 		};
-		1043A37325EBDF6000E7F675 /* client */ = {
-			isa = PBXGroup;
-			children = (
-				1043A37425EBDF7B00E7F675 /* MovieApiClient.swift */,
-				1043A37C25EBDF9500E7F675 /* PersonApiClient.swift */,
-			);
-			path = client;
-			sourceTree = "<group>";
-		};
 		1043A38125EBDFE400E7F675 /* response */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,13 +441,11 @@
 		1043A3EE25EBEBFA00E7F675 /* assembly */ = {
 			isa = PBXGroup;
 			children = (
-				1043A3EF25EBEC0A00E7F675 /* ApiAssembly.swift */,
 				1043A3F725EBEC3100E7F675 /* DataSourceAssembly.swift */,
 				1043A3FC25EBEC6300E7F675 /* DisposableAssembly.swift */,
 				1043A40125EBEC7D00E7F675 /* RepositoryAssembly.swift */,
 				1043A40625EBECA900E7F675 /* UtilsAssembly.swift */,
 				1043A40B25EBECC700E7F675 /* ViewModelAssembly.swift */,
-				1043A41025EBECF600E7F675 /* DatabaseAssembly.swift */,
 				1043A41525EBED3000E7F675 /* ViewControllerAssembly.swift */,
 				1043A41A25EBED6800E7F675 /* UseCaseAssembly.swift */,
 			);
@@ -832,14 +798,12 @@
 				1043A41625EBED3000E7F675 /* ViewControllerAssembly.swift in Sources */,
 				1043A46D25EBF05200E7F675 /* UITableViewExt.swift in Sources */,
 				1043A38325EBE00800E7F675 /* PopularMoviesApiResponse.swift in Sources */,
-				1043A37525EBDF7B00E7F675 /* MovieApiClient.swift in Sources */,
 				1043A3FD25EBEC6300E7F675 /* DisposableAssembly.swift in Sources */,
 				1043A46025EBF01600E7F675 /* ViewControllerExt.swift in Sources */,
 				1043A48B25EBF0F600E7F675 /* PersonDetailsViewModel.swift in Sources */,
 				1043A40225EBEC7D00E7F675 /* RepositoryAssembly.swift in Sources */,
 				1043A45A25EBEFEA00E7F675 /* BaseViewController.swift in Sources */,
 				1043A3B325EBE70C00E7F675 /* PersonRemoteDataSource.swift in Sources */,
-				1043A3A925EBE5DB00E7F675 /* MovieDatabaseClient.swift in Sources */,
 				1043A35625EBDE7900E7F675 /* NetworkUtils.swift in Sources */,
 				1043A3C725EBE82C00E7F675 /* MovieRemoteDataSource.swift in Sources */,
 				10070C9425ED3DF900BE2DC0 /* GetPopularMoviesUseCase.swift in Sources */,
@@ -852,7 +816,6 @@
 				1043A3BF25EBE7A500E7F675 /* MovieDataSource.swift in Sources */,
 				1043A41B25EBED6800E7F675 /* UseCaseAssembly.swift in Sources */,
 				1043A3D825EBEA5C00E7F675 /* PersonRepository.swift in Sources */,
-				1043A3A425EBE57B00E7F675 /* PersonDatabaseClient.swift in Sources */,
 				10070C7525ED36A100BE2DC0 /* UseCase.swift in Sources */,
 				1043A35B25EBDE9400E7F675 /* AppError.swift in Sources */,
 				1043A49B25EBF41700E7F675 /* MovieDetailsViewModel.swift in Sources */,
@@ -867,7 +830,6 @@
 				10070C8A25ED390E00BE2DC0 /* GetPersonDetailsUseCase.swift in Sources */,
 				10070C9925ED3E9900BE2DC0 /* GetMovieCastUseCase.swift in Sources */,
 				1043A47225EBF0A100E7F675 /* PopularMoviesViewController.swift in Sources */,
-				1043A41125EBECF600E7F675 /* DatabaseAssembly.swift in Sources */,
 				1043A39A25EBE30C00E7F675 /* MovieCastApiResponse.swift in Sources */,
 				1043A36F25EBDF3F00E7F675 /* ApiError.swift in Sources */,
 				10070C7D25ED36C200BE2DC0 /* ResultUseCase.swift in Sources */,
@@ -878,13 +840,11 @@
 				1043A39F25EBE35C00E7F675 /* ApiRouter.swift in Sources */,
 				10318A2825EE9C07005213A0 /* NetworkResource.swift in Sources */,
 				1043A36025EBDEB100E7F675 /* ErrorType.swift in Sources */,
-				1043A3F025EBEC0A00E7F675 /* ApiAssembly.swift in Sources */,
 				1043A3E025EBEA7C00E7F675 /* PersonRepositoryImpl.swift in Sources */,
 				1043A44925EBEF9A00E7F675 /* DialogUtils.swift in Sources */,
 				1043A39525EBE27C00E7F675 /* MovieCastModel.swift in Sources */,
 				1043A40C25EBECC700E7F675 /* ViewModelAssembly.swift in Sources */,
 				1043A2F425EBD68B00E7F675 /* AppDelegate.swift in Sources */,
-				1043A37D25EBDF9500E7F675 /* PersonApiClient.swift in Sources */,
 				1043A3F825EBEC3100E7F675 /* DataSourceAssembly.swift in Sources */,
 				10070C8F25ED3ACA00BE2DC0 /* RxUseCase.swift in Sources */,
 				1043A3AE25EBE6DF00E7F675 /* PersonDataSource.swift in Sources */,

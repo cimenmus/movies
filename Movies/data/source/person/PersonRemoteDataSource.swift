@@ -8,17 +8,12 @@
 import Foundation
 import RxSwift
 
-// makes Person data operations on API using PersonApiClient
 struct PersonRemoteDataSource: PersonDataSource {
     
-    let apiClient: PersonApiClient!
-    
-    init(apiClient: PersonApiClient) {
-        self.apiClient = apiClient
-    }
-    
     func getPersonDetails(personId: Int) -> Single<PersonModel> {
-        return apiClient.getPersonDetails(personId: personId)
+        return NetworkResource<PersonModel, PersonModel>(
+            networkRequest: ApiRouter.getPersonDetail(personId: personId)
+        ).execute()
     }
     
     func savePerson(person: PersonModel) {}
