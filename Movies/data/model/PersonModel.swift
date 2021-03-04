@@ -20,4 +20,14 @@ struct PersonModel: Codable {
         case biography = "biography"
         case imagePath = "profile_path"
     }
+    
+    init(id: Int?,
+         name: String?,
+         biography: String?,
+         imagePath: String?) {
+        self.id = id
+        self.name = name
+        self.biography = biography
+        self.imagePath = imagePath
+    }
 }

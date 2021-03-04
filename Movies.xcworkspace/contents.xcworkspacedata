@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MovieCastEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:MovieEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:PersonEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:PersonEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Movies.xcodeproj">
    </FileRef>
    <FileRef

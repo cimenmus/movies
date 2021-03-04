@@ -25,4 +25,10 @@ struct Constants {
             static let KEY = "page"
         }
     }
+    
+    struct Database {
+        struct Movie {
+            static let PAGE_LIMIT = 20
+        }
+    }
 }

@@ -24,8 +24,7 @@ class MovieDetailsViewController: BaseViewController {
     
     override func initLogic() {
         super.initLogic()
-        //viewModel.getCastOfMovie(movieId: movie.id ?? 0)
-        viewModel.getCastOfMovie(movieId: 458576)
+        viewModel.getCastOfMovie(movieId: movie.id ?? 0)
     }
     
 }

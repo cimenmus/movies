@@ -24,4 +24,18 @@ struct MovieCastModel: Codable {
         case movieId = "movieId"
         case imagePath = "profile_path"
     }
+    
+    init(id : Int?,
+         name : String?,
+         character : String?,
+         order : Int?,
+         movieId : Int?,
+         imagePath : String?) {
+        self.id = id
+        self.name = name
+        self.character = character
+        self.order = order
+        self.movieId = movieId
+        self.imagePath = imagePath
+    }
 }

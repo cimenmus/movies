@@ -32,4 +32,26 @@ struct MovieModel: Codable {
         case releaseDate = "release_date"
         case popularity = "popularity"
     }
+    
+    init(id : Int?,
+         adult : Bool?,
+         posterImagePath : String?,
+         backdropImagePath : String?,
+         title : String?,
+         overview : String?,
+         average : Double?,
+         voteCount : Int?,
+         releaseDate : String?,
+         popularity : Double?) {
+        self.id = id
+        self.adult = adult
+        self.posterImagePath = posterImagePath
+        self.backdropImagePath = backdropImagePath
+        self.title = title
+        self.overview = overview
+        self.average = average
+        self.voteCount = voteCount
+        self.releaseDate = releaseDate
+        self.popularity = popularity
+    }
 }
