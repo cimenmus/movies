@@ -16,11 +16,11 @@ extension MovieCastEntity {
         return NSFetchRequest<MovieCastEntity>(entityName: "MovieCastEntity")
     }
 
+    @NSManaged public var character: String?
+    @NSManaged public var id: Int64
     @NSManaged public var imagePath: String?
     @NSManaged public var movieId: Int64
-    @NSManaged public var order: Int64
-    @NSManaged public var character: String?
     @NSManaged public var name: String?
-    @NSManaged public var id: Int64
+    @NSManaged public var order: Int64
 
 }

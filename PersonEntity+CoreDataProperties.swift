@@ -16,9 +16,9 @@ extension PersonEntity {
         return NSFetchRequest<PersonEntity>(entityName: "PersonEntity")
     }
 
-    @NSManaged public var imagePath: String?
     @NSManaged public var biography: String?
-    @NSManaged public var name: String?
     @NSManaged public var id: Int64
+    @NSManaged public var imagePath: String?
+    @NSManaged public var name: String?
 
 }
