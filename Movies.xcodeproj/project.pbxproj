@@ -24,7 +24,6 @@
 		1043A34D25EBDE4600E7F675 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A34C25EBDE4600E7F675 /* StringExt.swift */; };
 		1043A35625EBDE7900E7F675 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A35525EBDE7900E7F675 /* NetworkUtils.swift */; };
 		1043A35B25EBDE9400E7F675 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A35A25EBDE9400E7F675 /* AppError.swift */; };
-		1043A36025EBDEB100E7F675 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A35F25EBDEB100E7F675 /* ErrorType.swift */; };
 		1043A36525EBDEDC00E7F675 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A36425EBDEDC00E7F675 /* Constants.swift */; };
 		1043A36F25EBDF3F00E7F675 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A36E25EBDF3F00E7F675 /* ApiError.swift */; };
 		1043A38325EBE00800E7F675 /* PopularMoviesApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A38225EBE00800E7F675 /* PopularMoviesApiResponse.swift */; };
@@ -115,7 +114,6 @@
 		1043A34C25EBDE4600E7F675 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		1043A35525EBDE7900E7F675 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		1043A35A25EBDE9400E7F675 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		1043A35F25EBDEB100E7F675 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		1043A36425EBDEDC00E7F675 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1043A36E25EBDF3F00E7F675 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		1043A38225EBE00800E7F675 /* PopularMoviesApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesApiResponse.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 		1043A2F225EBD68B00E7F675 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				1043A34A25EBDE2F00E7F675 /* common */,
 				1043A33E25EBDD8100E7F675 /* domain */,
 				1043A33D25EBDD7C00E7F675 /* data */,
 				1043A33C25EBDD7300E7F675 /* ui */,
@@ -305,6 +302,10 @@
 		1043A33D25EBDD7C00E7F675 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				1043A35A25EBDE9400E7F675 /* AppError.swift */,
+				1043A36425EBDEDC00E7F675 /* Constants.swift */,
+				1043A34B25EBDE3700E7F675 /* ext */,
+				1043A35125EBDE6400E7F675 /* util */,
 				10F2DF3325F3A760005720C0 /* result */,
 				10A232CF25F1346800385E3C /* db */,
 				1043A34325EBDDEA00E7F675 /* source */,
@@ -361,18 +362,6 @@
 				1043A3BC25EBE77900E7F675 /* person */,
 			);
 			path = source;
-			sourceTree = "<group>";
-		};
-		1043A34A25EBDE2F00E7F675 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				1043A35125EBDE6400E7F675 /* util */,
-				1043A34B25EBDE3700E7F675 /* ext */,
-				1043A35A25EBDE9400E7F675 /* AppError.swift */,
-				1043A35F25EBDEB100E7F675 /* ErrorType.swift */,
-				1043A36425EBDEDC00E7F675 /* Constants.swift */,
-			);
-			path = common;
 			sourceTree = "<group>";
 		};
 		1043A34B25EBDE3700E7F675 /* ext */ = {
@@ -862,7 +851,6 @@
 				10F2DF4025F3A7B6005720C0 /* DatabaseResult.swift in Sources */,
 				10F2DF2F25F39F5B005720C0 /* MovieDetailsViewModel.swift in Sources */,
 				102C4BE025F38F1500CBB19A /* RxSubjectUseCase.swift in Sources */,
-				1043A36025EBDEB100E7F675 /* ErrorType.swift in Sources */,
 				1043A3E025EBEA7C00E7F675 /* PersonRepositoryImpl.swift in Sources */,
 				1043A44925EBEF9A00E7F675 /* DialogUtils.swift in Sources */,
 				1043A39525EBE27C00E7F675 /* MovieCastModel.swift in Sources */,
