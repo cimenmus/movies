@@ -23,17 +23,8 @@ struct PersonDetailsViewModel {
     }
     
     func getPersonDetails(personId: Int) {
-        personDetailsObservable.onNext(Result.loading())
-        getPersonDetailsUseCase.invoke(parameters: PersonDetailParameter(personId: personId))
-            .observe(on: MainScheduler.instance)
-            .subscribe(
-                onSuccess: { person in
-                    personDetailsObservable.onNext(Result.success(data: person))
-                },
-                onFailure: { error in
-                    personDetailsObservable.onNext(Result.error(error: error.toAppError()))
-                }
-            )
-            .disposed(by: disposeBag)
+        getPersonDetailsUseCase.invoke(parameters: PersonDetailParameter(personId: personId),
+                                       subject: personDetailsObservable,
+                                       disposeBag: disposeBag)
     }
 }

@@ -58,7 +58,6 @@ struct MovieLocalDataSource: MovieDataSource {
             managedObject.setValue(movie.posterImagePath, forKey: "posterImagePath")
             managedObject.setValue(movie.backdropImagePath, forKey: "backdropImagePath")
             managedObject.setValue(movie.title, forKey: "title")
-            
             managedObject.setValue(movie.overview, forKey: "overview")
             managedObject.setValue(movie.average, forKey: "average")
             managedObject.setValue(movie.voteCount, forKey: "voteCount")

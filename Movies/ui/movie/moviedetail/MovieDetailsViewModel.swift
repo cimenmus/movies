@@ -24,18 +24,9 @@ class MovieDetailsViewModel {
     }
     
     func getCastOfMovie(movieId: Int) {
-        movieCastObservable.onNext(Result.loading())
-        getMovieCastUseCase.invoke(parameters: MovieCastParameter(movieId: movieId))
-            .observe(on: MainScheduler.instance)
-            .subscribe(
-                onSuccess: { movieCast in
-                    self.movieCastObservable.onNext(Result.success(data: movieCast))
-                },
-                onFailure: { error in
-                    self.movieCastObservable.onNext(Result.error(error: error.toAppError()))
-                }
-            )
-            .disposed(by: disposeBag)
+        getMovieCastUseCase.invoke(parameters: MovieCastParameter(movieId: movieId),
+                                   subject: movieCastObservable,
+                                   disposeBag: disposeBag)
     }
     
 }

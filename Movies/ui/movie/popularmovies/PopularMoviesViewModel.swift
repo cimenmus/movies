@@ -29,18 +29,12 @@ class PopularMoviesViewModel {
             popularMoviesObservable.onNext(Result.loading())
         }
         let nextPage = currentPage + 1
-        getPopularMoviesUseCase.invoke(parameters: PopularMoviesParameter(page: nextPage))
-            .observe(on: MainScheduler.instance)
-            .subscribe(
-                onSuccess: { popularMovies in
-                    self.popularMoviesObservable.onNext(Result.success(data: popularMovies))
-                    self.currentPage += 1
-                },
-                onFailure: { error in
-                    self.popularMoviesObservable.onNext(Result.error(error: error.toAppError()))
-                }
-            )
-            .disposed(by: disposeBag)
+        getPopularMoviesUseCase.invoke(parameters: PopularMoviesParameter(page: nextPage),
+                                       showLoading: showLoading,
+                                       subject: popularMoviesObservable,
+                                       disposeBag: disposeBag,
+                                       onSuccess: {[weak self] data in self?.currentPage += 1} )
+            
     }
     
 }

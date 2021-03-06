@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class GetPersonDetailsUseCase: RxUseCase {
+class GetPersonDetailsUseCase: RxSubjectUseCase {
     
     typealias P = PersonDetailParameter
     typealias R = PersonModel

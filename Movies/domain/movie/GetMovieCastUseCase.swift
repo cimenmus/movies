@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class GetMovieCastUseCase: RxUseCase {
+class GetMovieCastUseCase: RxSubjectUseCase {
     
     typealias P = MovieCastParameter
     typealias R = [MovieCastModel]
@@ -29,3 +29,4 @@ class GetMovieCastUseCase: RxUseCase {
 struct MovieCastParameter {
     var movieId : Int
 }
+

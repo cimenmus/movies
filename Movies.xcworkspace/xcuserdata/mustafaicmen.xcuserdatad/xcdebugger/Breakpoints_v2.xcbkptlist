@@ -55,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CB5601B2-2582-4EDF-AA88-4A0E357D4201"
+            uuid = "5794D817-833C-4461-BFB8-0B2D67BFF859"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/ui/movie/popularmovies/PopularMoviesViewModel.swift"
+            filePath = "Movies/ui/common/data/DataObserver.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getNextPopularMovies(showLoading:)"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "observe(onLoading:onSuccess:onError:onNone:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

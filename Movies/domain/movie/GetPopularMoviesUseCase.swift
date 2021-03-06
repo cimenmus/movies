@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class GetPopularMoviesUseCase: RxUseCase {
+class GetPopularMoviesUseCase: RxSubjectUseCase {
     
     typealias P = PopularMoviesParameter
     typealias R = [MovieModel]
