@@ -12,6 +12,7 @@ struct Constants {
     //The API's base URL
     static let baseUrl = "https://api.themoviedb.org/3"
     static let TMDB_IMAGEURL_PREFIX = "https://image.tmdb.org/t/p/w500/" // image url prefix for tmdb images
+    static let TMDB_BACKDROP_IMAGE_RATIO = 0.562
     
     // Api parameters like api version and query parameters and their values
     struct Parameters {

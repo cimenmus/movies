@@ -26,14 +26,14 @@ class PopularMoviesViewController: BaseViewController {
         view.addSubview(tableView)
         return tableView
     }()
-    
+
     override func initViews() {
         super.initViews()
         title = "Popular Movies"
         NSLayoutConstraint.activate([
                 movieTableView.widthAnchor.constraint(equalToConstant: SCREEN_WIDTH),
                 movieTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-                movieTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+                movieTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ])
     }
     
