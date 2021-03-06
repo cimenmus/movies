@@ -30,11 +30,11 @@ target 'Movies' do
   target 'MoviesTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Mockit', '1.5.0'
   end
 
   target 'MoviesUITests' do
-    # Pods for testing 
-    pod 'Mockit', '1.5.0'
+    # Pods for testing
   end
 
 end
