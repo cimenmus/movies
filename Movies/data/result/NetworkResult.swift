@@ -1,15 +1,15 @@
 //
-//  NetworkResource.swift
+//  NetworkResult.swift
 //  Movies
 //
-//  Created by mustafa içmen on 2.03.2021.
+//  Created by mustafa içmen on 6.03.2021.
 //
 
 import Foundation
 import RxSwift
 import Alamofire
 
-class NetworkResource<ApiResponseType: Codable, ResultType> {
+class NetworkResult<ApiResponseType: Codable, ResultType> {
             
     private var networkRequest: URLRequestConvertible!
     private var responseParser: ((ApiResponseType) -> ResultType)?

@@ -1,14 +1,14 @@
 //
-//  DatabaseResource.swift
+//  DatabaseResult.swift
 //  Movies
 //
-//  Created by mustafa içmen on 3.03.2021.
+//  Created by mustafa içmen on 6.03.2021.
 //
 
 import Foundation
 import RxSwift
 
-class DatabaseResource<ResultType> {
+class DatabaseResult<ResultType> {
             
     private var dbRequest: (() -> ResultType?)
     

@@ -32,7 +32,7 @@ class PersonRepositoryImpl: PersonRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getPersonDetails(personId: Int) -> Single<PersonModel> {
-        return NetworkBoundResource<PersonModel>(
+        return NetworkBoundResult<PersonModel>(
             loadFromNetwork: { self.personRemoteDataSource.getPersonDetails(personId: personId) },
             loadFromDb: { self.personLocalDataSource.getPersonDetails(personId: personId) },
             saveToDb: { data in self.personLocalDataSource.savePerson(person: data)}

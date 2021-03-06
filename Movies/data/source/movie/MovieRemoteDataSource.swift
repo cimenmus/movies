@@ -11,7 +11,7 @@ import RxSwift
 struct MovieRemoteDataSource: MovieDataSource {
     
     func getPopularMovies(page: Int) -> Single<[MovieModel]> {
-        return NetworkResource<PopularMoviesApiResponse, [MovieModel]>(
+        return NetworkResult<PopularMoviesApiResponse, [MovieModel]>(
             networkRequest: ApiRouter.getPopularMovies(page: page),
             responseParser: { response in return response.results ?? [MovieModel]()}
         ).execute()
@@ -20,7 +20,7 @@ struct MovieRemoteDataSource: MovieDataSource {
     func saveMovies(movies: [MovieModel]) {}
     
     func getCastOfMovie(movieId: Int) -> Single<[MovieCastModel]> {
-        return NetworkResource<MovieCastApiResponse, [MovieCastModel]>(
+        return NetworkResult<MovieCastApiResponse, [MovieCastModel]>(
             networkRequest: ApiRouter.getCastOfAMovie(movieId: movieId),
             responseParser: { response in return response.cast ?? [MovieCastModel]()}
         ).execute()

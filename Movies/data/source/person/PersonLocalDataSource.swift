@@ -14,7 +14,7 @@ struct PersonLocalDataSource: PersonDataSource {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func getPersonDetails(personId: Int) -> Single<PersonModel> {
-        return DatabaseResource<PersonModel>(
+        return DatabaseResult<PersonModel>(
             dbRequest: {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PersonEntity")
                 request.predicate = NSPredicate(format: "id = %i", personId)

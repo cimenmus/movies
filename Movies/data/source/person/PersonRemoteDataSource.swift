@@ -11,7 +11,7 @@ import RxSwift
 struct PersonRemoteDataSource: PersonDataSource {
     
     func getPersonDetails(personId: Int) -> Single<PersonModel> {
-        return NetworkResource<PersonModel, PersonModel>(
+        return NetworkResult<PersonModel, PersonModel>(
             networkRequest: ApiRouter.getPersonDetail(personId: personId)
         ).execute()
     }

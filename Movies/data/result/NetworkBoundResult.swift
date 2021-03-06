@@ -1,14 +1,14 @@
 //
-//  NetworkBoundResource.swift
+//  NetworkBoundResult.swift
 //  Movies
 //
-//  Created by mustafa içmen on 3.03.2021.
+//  Created by mustafa içmen on 6.03.2021.
 //
 
 import Foundation
 import RxSwift
 
-class NetworkBoundResource<ResultType> {
+class NetworkBoundResult<ResultType> {
             
     private var loadFromNetwork: () -> Single<ResultType>
     private var loadFromDb: () -> Single<ResultType>

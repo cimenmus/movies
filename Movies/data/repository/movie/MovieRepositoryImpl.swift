@@ -32,7 +32,7 @@ class MovieRepositoryImpl: MovieRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getPopularMovies(page: Int) -> Single<[MovieModel]> {
-        return NetworkBoundResource<[MovieModel]>(
+        return NetworkBoundResult<[MovieModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getPopularMovies(page: page) },
             loadFromDb: { self.movieLocalDataSource.getPopularMovies(page: page) },
             saveToDb: { data in self.movieLocalDataSource.saveMovies(movies: data)}
@@ -50,7 +50,7 @@ class MovieRepositoryImpl: MovieRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getCastOfMovie(movieId: Int) -> Single<[MovieCastModel]> {
-        return NetworkBoundResource<[MovieCastModel]>(
+        return NetworkBoundResult<[MovieCastModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getCastOfMovie(movieId: movieId) },
             loadFromDb: { self.movieLocalDataSource.getCastOfMovie(movieId: movieId) },
             saveToDb: { data in self.movieLocalDataSource.saveMovieCast(movieId: movieId, movieCast: data)}

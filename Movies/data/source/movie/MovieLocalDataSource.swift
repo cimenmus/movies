@@ -14,7 +14,7 @@ struct MovieLocalDataSource: MovieDataSource {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func getPopularMovies(page: Int) -> Single<[MovieModel]> {
-        return DatabaseResource<[MovieModel]>(
+        return DatabaseResult<[MovieModel]>(
             dbRequest: {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieEntity")
                 let sort = NSSortDescriptor(key: #keyPath(MovieEntity.popularity), ascending: false)
@@ -73,7 +73,7 @@ struct MovieLocalDataSource: MovieDataSource {
     }
     
     func getCastOfMovie(movieId: Int) -> Single<[MovieCastModel]> {
-        return DatabaseResource<[MovieCastModel]>(
+        return DatabaseResult<[MovieCastModel]>(
             dbRequest: {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieCastEntity")
                 let sort = NSSortDescriptor(key: #keyPath(MovieCastEntity.order), ascending: true)
