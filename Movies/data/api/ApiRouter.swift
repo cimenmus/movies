@@ -6,78 +6,54 @@
 //
 
 import Foundation
-import Alamofire
 
-enum ApiRouter: URLRequestConvertible {
+enum ApiRouter {
     
     //The endpoint name we'll call later
     case getPopularMovies(page: Int)
     case getCastOfAMovie(movieId: Int)
     case getPersonDetail(personId: Int)
     
-    //MARK: - URLRequestConvertible
-    // creates and executest URL request
-    func asURLRequest() throws -> URLRequest {
-        let url = try Constants.baseUrl.asURL()
-        
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        
-        //Http method
-        urlRequest.httpMethod = method.rawValue
-        // Otherwise, it returns latest success response when network is not available
-        urlRequest.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
-        
-        //Encoding
-        let encoding: ParameterEncoding = {
-            switch method {
-            case .get:
-                return URLEncoding.default
-            default:
-                return JSONEncoding.default
-            }
-        }()
-        
-        return try encoding.encode(urlRequest, with: parameters)
-    }
-    
-    //MARK: - HttpMethod
-    //This returns the HttpMethod type. It's used to determine the type if several endpoints are peresent
-    private var method: HTTPMethod {
-        switch self {
-        case .getPopularMovies,
-             .getCastOfAMovie,
-             .getPersonDetail:
-            return .get
+    //MARK: - URLRequest
+    func asUrlRequest() -> URLRequest? {
+        let baseURL = URL(string: Constants.baseUrl)!
+        let requestURL = baseURL.appendingPathComponent(path)
+        guard var components = URLComponents(url: requestURL, resolvingAgainstBaseURL: false) else {
+            return nil
         }
+        components.queryItems = parameters.keys.map { key in
+            URLQueryItem(name: key, value: parameters[key]?.description)
+        }
+        guard let url = components.url else {
+            return nil
+        }
+        return URLRequest(url: url)
     }
     
     //MARK: - Path
     //The path is the part following the base url
     private var path: String {
         switch self {
-        case .getPopularMovies:
-            return "movie/popular"
-        case .getCastOfAMovie(movieId: let movieId):
-            return "movie/\(movieId)/credits"
-        case .getPersonDetail(personId: let personId):
-            return "person/\(personId)"
+            case .getPopularMovies:
+                return "movie/popular"
+            case .getCastOfAMovie(movieId: let movieId):
+                return "movie/\(movieId)/credits"
+            case .getPersonDetail(personId: let personId):
+                return "person/\(personId)"
         }
     }
     
     //MARK: - Parameters
     //This is the queries part, it's optional because an endpoint can be without parameters
-    private var parameters: Parameters? {
+    private var parameters: [String: AnyObject] {
+        var params = [String: AnyObject]()
+        params[Constants.Parameters.ApiKey.KEY] = Constants.Parameters.ApiKey.VALUE as AnyObject
         switch self {
-        
-        case .getPopularMovies(page: let page):
-            return [Constants.Parameters.ApiKey.KEY: Constants.Parameters.ApiKey.VALUE,
-                    Constants.Parameters.Page.KEY: page]
-            
-        case .getCastOfAMovie:
-            return [Constants.Parameters.ApiKey.KEY: Constants.Parameters.ApiKey.VALUE]
-            
-        case .getPersonDetail:
-            return [Constants.Parameters.ApiKey.KEY: Constants.Parameters.ApiKey.VALUE]
+            case .getPopularMovies(page: let page):
+                params[Constants.Parameters.Page.KEY] = page as AnyObject
+            default:
+                print("")
         }
+        return params
     }
 }

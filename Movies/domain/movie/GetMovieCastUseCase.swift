@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
-class GetMovieCastUseCase: RxSubjectUseCase {
+class GetMovieCastUseCase: CombineUseCase {
     
     typealias P = MovieCastParameter
     typealias R = [MovieCastModel]
@@ -20,7 +20,7 @@ class GetMovieCastUseCase: RxSubjectUseCase {
         self.movieRepository = movieRepository
     }
     
-    func execute(parameters: MovieCastParameter) -> Single<[MovieCastModel]> {
+    func execute(parameters: MovieCastParameter) -> AnyPublisher<[MovieCastModel], AppError> {
         return movieRepository.getCastOfMovie(movieId: parameters.movieId)
     }
     

@@ -6,27 +6,20 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 class MovieDetailsViewModel {
     
     // dependencies are injected by Dependency Injetion
     private let getMovieCastUseCase: GetMovieCastUseCase!
-    private let disposeBag: DisposeBag! // to dispose observable on view model instance is remove from memory
-        
-    let movieCastObservable = PublishSubject<Result<[MovieCastModel]>>()
     
     // will be called by Dependency Injection
-    init(getMovieCastUseCase: GetMovieCastUseCase,
-         disposeBag: DisposeBag) {
+    init(getMovieCastUseCase: GetMovieCastUseCase) {
         self.getMovieCastUseCase = getMovieCastUseCase
-        self.disposeBag = disposeBag
     }
     
-    func getCastOfMovie(movieId: Int) {
-        getMovieCastUseCase.invoke(parameters: MovieCastParameter(movieId: movieId),
-                                   subject: movieCastObservable,
-                                   disposeBag: disposeBag)
+    func getCastOfMovie(movieId: Int) -> AnyPublisher<[MovieCastModel], AppError> {
+        return getMovieCastUseCase.invoke(parameters: MovieCastParameter(movieId: movieId))
     }
     
 }

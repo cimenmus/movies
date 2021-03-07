@@ -7,11 +7,14 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class MovieDetailsViewController: BaseViewController {
     
     // dependencies are injected by Dependency Injetion
     var viewModel: MovieDetailsViewModel!
+    
+    var cancellableSet: Set<AnyCancellable> = []
     
     var movie: MovieModel!
     
@@ -181,22 +184,15 @@ class MovieDetailsViewController: BaseViewController {
     
     override func initObservers() {
         super.initObservers()
-        DataObserver.create(view: self,
-                            publishSubject: self.viewModel.movieCastObservable,
-                            onSuccess: {[weak self] cast in self?.bindCastTableView(cast: cast)})
     }
     
     override func initLogic() {
         super.initLogic()
-        viewModel.getCastOfMovie(movieId: movie.id ?? 0)
+        self.getCastOfMovie()
     }
     
-    private func bindCastTableView(cast: [MovieCastModel]) {
-        self.castList.append(contentsOf: cast)
-        castTableView.reloadData()
-        castTableView.layoutIfNeeded()
-        castTableView.heightAnchor.constraint(equalToConstant: self.castTableView.contentSize.height).isActive = true
-        scrollView.layoutIfNeeded()
+    deinit {
+        cancellableSet.forEach { cancelable in cancelable.cancel()}
     }
     
 }
@@ -226,5 +222,23 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension MovieDetailsViewController {
+    
+    func getCastOfMovie() {
+        self.viewModel.getCastOfMovie(movieId: movie.id ?? 0)
+            .observe(view: self,
+                     onSuccess: { cast in self.bindCastTableView(cast: cast)})
+            .store(in: &cancellableSet)
+    }
+    
+    private func bindCastTableView(cast: [MovieCastModel]) {
+        self.castList.append(contentsOf: cast)
+        castTableView.reloadData()
+        castTableView.layoutIfNeeded()
+        castTableView.heightAnchor.constraint(equalToConstant: self.castTableView.contentSize.height).isActive = true
+        scrollView.layoutIfNeeded()
     }
 }

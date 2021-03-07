@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 // decides which data source is used to fetch Search data
 protocol PersonRepository {
     
-    func getPersonDetails(personId: Int) -> Single<PersonModel>
+    func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError>
     
     func savePerson(person: PersonModel)
 }

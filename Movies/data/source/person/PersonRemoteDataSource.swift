@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 struct PersonRemoteDataSource: PersonDataSource {
     
-    func getPersonDetails(personId: Int) -> Single<PersonModel> {
-        return NetworkResult<PersonModel, PersonModel>(
-            networkRequest: ApiRouter.getPersonDetail(personId: personId)
-        ).execute()
+    func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError> {
+        let request = ApiRouter.getPersonDetail(personId: personId).asUrlRequest()
+        return NetworkResult<PersonModel, PersonModel>().execute(urlRequest: request)
     }
     
     func savePerson(person: PersonModel) {}

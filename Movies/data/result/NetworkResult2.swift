@@ -1,8 +1,8 @@
 //
-//  NetworkResult.swift
+//  NetworkResult2.swift
 //  Movies
 //
-//  Created by mustafa içmen on 6.03.2021.
+//  Created by mustafa içmen on 7.03.2021.
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import RxSwift
 import Combine
 import Alamofire
 
-class NetworkResult<ApiResponseType: Codable, ResultType> {
+class NetworkResult2<ApiResponseType: Codable, ResultType> {
             
     private let session: URLSession = URLSession.shared
     private var responseParser: ((ApiResponseType) -> ResultType)?
@@ -20,9 +20,9 @@ class NetworkResult<ApiResponseType: Codable, ResultType> {
     }
     
     @discardableResult
-    func execute<ResultType>(urlRequest: URLRequest?) -> AnyPublisher<ResultType, AppError> {
+    func execute<ResultType>(networkRequest: NetworkRequest<ApiResponseType>) -> AnyPublisher<ResultType, AppError> {
         
-        guard let request = urlRequest else {
+        guard let request = networkRequest.request else {
             let appError = AppError(type: AppError.ErrorType.BAD_REQUEST, message: "Can not build network request")
             return .fail(appError)
         }

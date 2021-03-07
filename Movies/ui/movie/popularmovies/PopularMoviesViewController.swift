@@ -7,11 +7,14 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class PopularMoviesViewController: BaseViewController {
     
     // dependencies are injected by Dependency Injetion
     var viewModel: PopularMoviesViewModel!
+    
+    var cancellableSet: Set<AnyCancellable> = []
     
     private var movieList = [MovieModel]()
     private lazy var movieTableView: ContentSizedTableView = {
@@ -39,23 +42,15 @@ class PopularMoviesViewController: BaseViewController {
     
     override func initLogic() {
         super.initLogic()
-        viewModel.getNextPopularMovies(showLoading: true)
+        self.getNextPopularMovies()
     }
     
     override func initObservers() {
         super.initObservers()
-        /**
-         an object to
-            - observe  and showpopular movies data
-            - observe operation state to show/hide loading indicator and alert dialog
-         */
-        DataObserver.create(view: self,
-                            publishSubject: self.viewModel.popularMoviesObservable,
-                            onSuccess: {[weak self] newMovies in
-                                self?.movieList.append(contentsOf: newMovies)
-                                self?.movieTableView.reloadData()
-                            }
-        )
+    }
+    
+    deinit {
+        cancellableSet.forEach { cancelable in cancelable.cancel()}
     }
     
 }
@@ -73,9 +68,11 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        /*
         if indexPath.row == movieList.count - 4 {
-            self.viewModel.getNextPopularMovies()
+            self.getNextPopularMovies()
         }
+        */
         cell.configureProperties(movie: movieList[indexPath.row])
         cell.selectionStyle = .none
         return cell
@@ -89,5 +86,18 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension PopularMoviesViewController {
+    
+    func getNextPopularMovies() {
+        self.viewModel.getNextPopularMovies()
+            .observe(view: self,
+                     onSuccess: { newMovies in
+                        self.movieList.append(contentsOf: newMovies)
+                        self.movieTableView.reloadData()}
+            )
+            .store(in: &cancellableSet)
     }
 }

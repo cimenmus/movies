@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 // decides which data source is used to fetch Search data
 class PersonRepositoryImpl: PersonRepository {
@@ -31,12 +31,15 @@ class PersonRepositoryImpl: PersonRepository {
      if fetching network succeed, the fetched data will be inserted into database, then data is returned
      if network is not available, the data will be fetched from database and then returned
      */
-    func getPersonDetails(personId: Int) -> Single<PersonModel> {
+    func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError> {
+        return self.personRemoteDataSource.getPersonDetails(personId: personId)
+        /*
         return NetworkBoundResult<PersonModel>(
             loadFromNetwork: { self.personRemoteDataSource.getPersonDetails(personId: personId) },
             loadFromDb: { self.personLocalDataSource.getPersonDetails(personId: personId) },
             saveToDb: { data in self.personLocalDataSource.savePerson(person: data)}
         ).execute()
+        */
     }
     
     func savePerson(person: PersonModel) {

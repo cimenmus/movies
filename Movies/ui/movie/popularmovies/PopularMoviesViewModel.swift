@@ -6,35 +6,25 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 class PopularMoviesViewModel {
     
     // dependencies are injected by Dependency Injetion
     private let getPopularMoviesUseCase: GetPopularMoviesUseCase!
-    private let disposeBag: DisposeBag! // to dispose observable on view model instance is remove from memory
         
-    let popularMoviesObservable = PublishSubject<Result<[MovieModel]>>()
     private var currentPage = 0
     
     // will be called by Dependency Injection
-    init(getPopularMoviesUseCase: GetPopularMoviesUseCase,
-         disposeBag: DisposeBag) {
+    init(getPopularMoviesUseCase: GetPopularMoviesUseCase) {
         self.getPopularMoviesUseCase = getPopularMoviesUseCase
-        self.disposeBag = disposeBag
     }
     
-    func getNextPopularMovies(showLoading: Bool = false) {
-        if showLoading {
-            popularMoviesObservable.onNext(Result.loading())
-        }
+    func getNextPopularMovies() -> AnyPublisher<[MovieModel], AppError> {
         let nextPage = currentPage + 1
-        getPopularMoviesUseCase.invoke(parameters: PopularMoviesParameter(page: nextPage),
-                                       showLoading: showLoading,
-                                       subject: popularMoviesObservable,
-                                       disposeBag: disposeBag,
-                                       onSuccess: {[weak self] data in self?.currentPage += 1} )
-            
+        return getPopularMoviesUseCase.invoke(
+            parameters: PopularMoviesParameter(page: nextPage),
+            onSuccess: {[weak self] data in self?.currentPage += 1})
     }
     
 }

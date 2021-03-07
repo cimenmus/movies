@@ -6,25 +6,18 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 struct PersonDetailsViewModel {
         
     // dependencies are injected by Dependency Injetion
     private let getPersonDetailsUseCase: GetPersonDetailsUseCase!
-    private let disposeBag: DisposeBag!  // to dispose observable on view model instance is remove from memory
-    
-    let personDetailsObservable = PublishSubject<Result<PersonModel>>()
-    
-    init(getPersonDetailsUseCase: GetPersonDetailsUseCase,
-         disposeBag: DisposeBag) {
+        
+    init(getPersonDetailsUseCase: GetPersonDetailsUseCase) {
         self.getPersonDetailsUseCase = getPersonDetailsUseCase
-        self.disposeBag = disposeBag
     }
     
-    func getPersonDetails(personId: Int) {
-        getPersonDetailsUseCase.invoke(parameters: PersonDetailParameter(personId: personId),
-                                       subject: personDetailsObservable,
-                                       disposeBag: disposeBag)
+    func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError> {
+        return getPersonDetailsUseCase.invoke(parameters: PersonDetailParameter(personId: personId))
     }
 }

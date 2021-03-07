@@ -17,14 +17,13 @@ protocol UseCase {
 
 extension UseCase {
     
-    func invoke(parameters: P) -> Result<R> {
+    func invoke(parameters: P) -> (R?, AppError?) {
         do {
             let response = try execute(parameters: parameters)
-            return Result.success(data: response)
-            //try return Result.success(data: execute(parameters: parameters))
+            return (response, nil)
         } catch {
             let error = AppError(type: AppError.ErrorType.USECASE, message: "Uxecpected usecase error")
-            return Result.error(error: error)
+            return (nil, error)
         }
     }
 }

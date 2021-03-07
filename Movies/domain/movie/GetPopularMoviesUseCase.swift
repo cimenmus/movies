@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
-class GetPopularMoviesUseCase: RxSubjectUseCase {
-    
+class GetPopularMoviesUseCase: CombineUseCase {
+
     typealias P = PopularMoviesParameter
     typealias R = [MovieModel]
     
@@ -20,7 +20,7 @@ class GetPopularMoviesUseCase: RxSubjectUseCase {
         self.movieRepository = movieRepository
     }
     
-    func execute(parameters: PopularMoviesParameter) -> Single<[MovieModel]> {
+    func execute(parameters: PopularMoviesParameter) -> AnyPublisher<[MovieModel], AppError> {
         return movieRepository.getPopularMovies(page: parameters.page)
     }
     

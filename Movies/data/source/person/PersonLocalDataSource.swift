@@ -6,14 +6,17 @@
 //
 
 import Foundation
-import RxSwift
+import UIKit
 import CoreData
+import Combine
 
 struct PersonLocalDataSource: PersonDataSource {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func getPersonDetails(personId: Int) -> Single<PersonModel> {
+    func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError> {
+        return PassthroughSubject<PersonModel, AppError>() as! AnyPublisher<PersonModel, AppError>
+        /*
         return DatabaseResult<PersonModel>(
             dbRequest: {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PersonEntity")
@@ -37,6 +40,7 @@ struct PersonLocalDataSource: PersonDataSource {
                 }
             }
         ).execute()
+        */
     }
     
     func savePerson(person: PersonModel) {

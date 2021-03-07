@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Combine
 
 // decides which data source is used to fetch Search data
 class MovieRepositoryImpl: MovieRepository {
@@ -31,12 +32,15 @@ class MovieRepositoryImpl: MovieRepository {
      if fetching network succeed, the fetched data will be inserted into database, then data is returned
      if network is not available, the data will be fetched from database and then returned
      */
-    func getPopularMovies(page: Int) -> Single<[MovieModel]> {
+    func getPopularMovies(page: Int) -> AnyPublisher<[MovieModel], AppError> {
+        return self.movieRemoteDataSource.getPopularMovies(page: page)
+        /*
         return NetworkBoundResult<[MovieModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getPopularMovies(page: page) },
             loadFromDb: { self.movieLocalDataSource.getPopularMovies(page: page) },
             saveToDb: { data in self.movieLocalDataSource.saveMovies(movies: data)}
         ).execute()
+        */
     }
     
     func saveMovies(movies: [MovieModel]) {
@@ -49,12 +53,15 @@ class MovieRepositoryImpl: MovieRepository {
      if fetching network succeed, the fetched data will be inserted into database, then data is returned
      if network is not available, the data will be fetched from database and then returned
      */
-    func getCastOfMovie(movieId: Int) -> Single<[MovieCastModel]> {
+    func getCastOfMovie(movieId: Int) -> AnyPublisher<[MovieCastModel], AppError> {
+        return self.movieRemoteDataSource.getCastOfMovie(movieId: movieId)
+        /*
         return NetworkBoundResult<[MovieCastModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getCastOfMovie(movieId: movieId) },
             loadFromDb: { self.movieLocalDataSource.getCastOfMovie(movieId: movieId) },
             saveToDb: { data in self.movieLocalDataSource.saveMovieCast(movieId: movieId, movieCast: data)}
         ).execute()
+        */
     }
     
     func saveMovieCast(movieId: Int, movieCast: [MovieCastModel]) {

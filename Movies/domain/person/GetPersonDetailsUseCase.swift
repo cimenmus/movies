@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
-class GetPersonDetailsUseCase: RxSubjectUseCase {
+class GetPersonDetailsUseCase: CombineUseCase {
     
     typealias P = PersonDetailParameter
     typealias R = PersonModel
@@ -20,7 +20,7 @@ class GetPersonDetailsUseCase: RxSubjectUseCase {
         self.personRepository = personRepository
     }
     
-    func execute(parameters: PersonDetailParameter) -> Single<PersonModel> {
+    func execute(parameters: PersonDetailParameter) -> AnyPublisher<PersonModel, AppError> {
         return personRepository.getPersonDetails(personId: parameters.personId)
     }
     

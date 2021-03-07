@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class PersonDetailsViewController: BaseViewController {
     
@@ -14,6 +15,7 @@ class PersonDetailsViewController: BaseViewController {
     var viewModel: PersonDetailsViewModel!
     
     var personId: Int!
+    var cancellableSet: Set<AnyCancellable> = []
     
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -73,10 +75,26 @@ class PersonDetailsViewController: BaseViewController {
     
     override func initObservers() {
         super.initObservers()
-        DataObserver.create(view: self,
-                            publishSubject: self.viewModel.personDetailsObservable,
-                            onSuccess: {[weak self] person in self?.setFields(person: person)}
-        )
+    }
+    
+    override func initLogic() {
+        super.initLogic()
+        self.getPersonDetails()
+    }
+    
+    deinit {
+        cancellableSet.forEach { cancelable in cancelable.cancel()}
+    }
+        
+}
+
+extension PersonDetailsViewController {
+    
+    func getPersonDetails() {
+        self.viewModel.getPersonDetails(personId: personId)
+            .observe(view: self,
+                     onSuccess: { person in self.setFields(person: person)})
+            .store(in: &cancellableSet)
     }
     
     private func setFields(person: PersonModel){
@@ -84,11 +102,5 @@ class PersonDetailsViewController: BaseViewController {
         profileImageView.loadTmdbImageWithPlaceHolder(fileName: person.imagePath)
         biographyLabel.text = person.biography
     }
-    
-    override func initLogic() {
-        super.initLogic()
-        viewModel.getPersonDetails(personId: personId)
-    }
-        
 }
 

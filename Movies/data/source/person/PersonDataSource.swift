@@ -7,11 +7,11 @@
 
 import Foundation
 
-import RxSwift
+import Combine
 
 protocol PersonDataSource {
     
-    func getPersonDetails(personId: Int) -> Single<PersonModel>
+    func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError>
     
     func savePerson(person: PersonModel)
 }

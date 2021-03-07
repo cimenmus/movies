@@ -7,14 +7,15 @@
 
 import Foundation
 import RxSwift
+import Combine
 
 protocol MovieDataSource {
     
-    func getPopularMovies(page: Int) -> Single<[MovieModel]>
+    func getPopularMovies(page: Int) -> AnyPublisher<[MovieModel], AppError>
     
     func saveMovies(movies: [MovieModel])
     
-    func getCastOfMovie(movieId: Int) -> Single<[MovieCastModel]>
+    func getCastOfMovie(movieId: Int) -> AnyPublisher<[MovieCastModel], AppError>
     
     func saveMovieCast(movieId: Int, movieCast: [MovieCastModel])
 }
