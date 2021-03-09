@@ -32,7 +32,7 @@ class PersonRepositoryImpl: PersonRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError> {
-        return self.personRemoteDataSource.getPersonDetails(personId: personId)
+        return self.personLocalDataSource.getPersonDetails(personId: personId)
         /*
         return NetworkBoundResult<PersonModel>(
             loadFromNetwork: { self.personRemoteDataSource.getPersonDetails(personId: personId) },

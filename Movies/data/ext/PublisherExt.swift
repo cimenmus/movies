@@ -74,11 +74,12 @@ extension AnyPublisher {
             receiveValue: { value in
                 DispatchQueue.main.async {
                     view.stopLoader()
-                    if let success = onSuccess { success(value as! Output) }
+                    if let success = onSuccess { success(value) }
                 }
               })
         
     }
 }
+
 
 

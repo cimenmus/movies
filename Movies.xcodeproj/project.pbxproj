@@ -61,6 +61,8 @@
 		1043A47C25EBF0CE00E7F675 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A47B25EBF0CE00E7F675 /* MovieDetailsViewController.swift */; };
 		1043A48625EBF0ED00E7F675 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A48525EBF0ED00E7F675 /* PersonDetailsViewController.swift */; };
 		1043A48B25EBF0F600E7F675 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043A48A25EBF0F600E7F675 /* PersonDetailsViewModel.swift */; };
+		105C2C4825F7CADC00F6E8A9 /* DatabasePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C2C4725F7CADC00F6E8A9 /* DatabasePublisher.swift */; };
+		105C2C4D25F7CB9300F6E8A9 /* DatabaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C2C4C25F7CB9300F6E8A9 /* DatabaseSubscription.swift */; };
 		10A233D325F143ED00385E3C /* MovieDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10A233D125F143ED00385E3C /* MovieDatabase.xcdatamodeld */; };
 		10F2DF2F25F39F5B005720C0 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F2DF2E25F39F5B005720C0 /* MovieDetailsViewModel.swift */; };
 		10F2DF3525F3A76D005720C0 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F2DF3425F3A76D005720C0 /* NetworkResult.swift */; };
@@ -151,6 +153,8 @@
 		1043A47B25EBF0CE00E7F675 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		1043A48525EBF0ED00E7F675 /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
 		1043A48A25EBF0F600E7F675 /* PersonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModel.swift; sourceTree = "<group>"; };
+		105C2C4725F7CADC00F6E8A9 /* DatabasePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePublisher.swift; sourceTree = "<group>"; };
+		105C2C4C25F7CB9300F6E8A9 /* DatabaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSubscription.swift; sourceTree = "<group>"; };
 		10A233D225F143ED00385E3C /* MovieDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieDatabase.xcdatamodel; sourceTree = "<group>"; };
 		10F2DF2E25F39F5B005720C0 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		10F2DF3425F3A76D005720C0 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -520,6 +524,8 @@
 			isa = PBXGroup;
 			children = (
 				10A233D125F143ED00385E3C /* MovieDatabase.xcdatamodeld */,
+				105C2C4725F7CADC00F6E8A9 /* DatabasePublisher.swift */,
+				105C2C4C25F7CB9300F6E8A9 /* DatabaseSubscription.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -851,6 +857,7 @@
 				1043A3B825EBE73A00E7F675 /* PersonLocalDataSource.swift in Sources */,
 				1043A3E525EBEAD500E7F675 /* MovieRepository.swift in Sources */,
 				1043A46825EBF03A00E7F675 /* UIImageViewExt.swift in Sources */,
+				105C2C4825F7CADC00F6E8A9 /* DatabasePublisher.swift in Sources */,
 				1043A40725EBECA900E7F675 /* UtilsAssembly.swift in Sources */,
 				1043A42025EBEDCD00E7F675 /* DependencyManager.swift in Sources */,
 				1043A3BF25EBE7A500E7F675 /* MovieDataSource.swift in Sources */,
@@ -863,6 +870,7 @@
 				1043A47725EBF0B600E7F675 /* PopularMoviesViewModel.swift in Sources */,
 				1043A3EA25EBEB0900E7F675 /* MovieRepositoryImpl.swift in Sources */,
 				1043A39025EBE08A00E7F675 /* PersonModel.swift in Sources */,
+				105C2C4D25F7CB9300F6E8A9 /* DatabaseSubscription.swift in Sources */,
 				1043A3CC25EBE94700E7F675 /* MovieLocalDataSource.swift in Sources */,
 				10070C8A25ED390E00BE2DC0 /* GetPersonDetailsUseCase.swift in Sources */,
 				10070C9925ED3E9900BE2DC0 /* GetMovieCastUseCase.swift in Sources */,

@@ -6,27 +6,30 @@
 //
 
 import Foundation
+import Combine
 import RxSwift
 
 class DatabaseResult<ResultType> {
             
-    private var dbRequest: (() -> ResultType?)
+    private var request: (() -> ResultType?)
     
-    init(dbRequest: @escaping (() -> ResultType?)) {
-        self.dbRequest = dbRequest
+    init(request: @escaping (() -> ResultType?)) {
+        self.request = request
     }
             
-    func execute<ResultType>() -> Single<ResultType> {
-        return Single<ResultType>.create { single in
-            let data = self.dbRequest()
-            if data == nil || (data is Array<AnyObject> && (data as! Array<AnyObject>).isEmpty) {
-                let error = AppError(type: AppError.ErrorType.DB_ITEM_NOT_FOUND, message: "Database item not found.")
-                single(.failure(error))
-            } else {
-                single(.success(data as! ResultType))
+    func execute<ResultType>() -> AnyPublisher<ResultType, AppError> {
+        return DatabasePublisher(request: request)
+            .mapError { err in err as! AppError }
+            .print()
+            .flatMap { data -> AnyPublisher<ResultType, AppError> in
+                if (data is Array<AnyObject> && (data as! Array<AnyObject>).isEmpty) {
+                    let error = AppError(type: AppError.ErrorType.DB_ITEM_NOT_FOUND, message: "Database item not found.")
+                    return .fail(error)
+                } else {
+                    return .just(data as! ResultType)
+                }
+                
             }
-            return Disposables.create()
-        }
-   }
-    
+            .eraseToAnyPublisher()
+   } 
 }

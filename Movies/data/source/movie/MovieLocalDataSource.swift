@@ -15,10 +15,8 @@ struct MovieLocalDataSource: MovieDataSource {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func getPopularMovies(page: Int) -> AnyPublisher<[MovieModel], AppError> {
-        return PassthroughSubject<[MovieModel], AppError>() as! AnyPublisher<[MovieModel], AppError>
-        /*
         return DatabaseResult<[MovieModel]>(
-            dbRequest: {
+            request: {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieEntity")
                 let sort = NSSortDescriptor(key: #keyPath(MovieEntity.popularity), ascending: false)
                 request.sortDescriptors = [sort]
@@ -49,7 +47,6 @@ struct MovieLocalDataSource: MovieDataSource {
                 }
             }
         ).execute()
-        */
     }
     
     func saveMovies(movies: [MovieModel]) {
@@ -77,10 +74,8 @@ struct MovieLocalDataSource: MovieDataSource {
     }
     
     func getCastOfMovie(movieId: Int) -> AnyPublisher<[MovieCastModel], AppError> {
-        return PassthroughSubject<[MovieCastModel], AppError>() as! AnyPublisher<[MovieCastModel], AppError>
-        /*
         return DatabaseResult<[MovieCastModel]>(
-            dbRequest: {
+            request: {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieCastEntity")
                 let sort = NSSortDescriptor(key: #keyPath(MovieCastEntity.order), ascending: true)
                 request.sortDescriptors = [sort]
@@ -106,7 +101,6 @@ struct MovieLocalDataSource: MovieDataSource {
                 }
             }
         ).execute()
-        */
     }
     
     func saveMovieCast(movieId: Int, movieCast: [MovieCastModel]) {

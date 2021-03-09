@@ -98,38 +98,6 @@
             endingLineNumber = "70"
             landmarkName = "observe(onLoading:onSuccess:onError:onNone:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7E7AD4A4-06F2-40B5-BFA1-85C6782B465E - 96bda93365f9c852"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Combine.Subscribers.Demand) -&gt; () in Movies.DataObserver.(observe in _64A59EB3441EA53F3A9D9C06C4648BED)(onLoading: Swift.Optional&lt;() -&gt; ()&gt;, onSuccess: Swift.Optional&lt;(A) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Movies.AppError&gt;) -&gt; ()&gt;, onNone: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/common/data/DataObserver.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "263">
-               </Location>
-               <Location
-                  uuid = "7E7AD4A4-06F2-40B5-BFA1-85C6782B465E - e12e1bfbf8d6d305"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #2 (Combine.Subscribers.Demand) -&gt; () in Movies.DataObserver.(observe in _64A59EB3441EA53F3A9D9C06C4648BED)(onLoading: Swift.Optional&lt;() -&gt; ()&gt;, onSuccess: Swift.Optional&lt;(A) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Movies.AppError&gt;) -&gt; ()&gt;, onNone: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/common/data/DataObserver.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "191">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -327,22 +295,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F8BCFFE7-782D-475F-ACA4-B481C22140A6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/data/ext/PublisherExt.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "observe(view:onLoading:onSuccess:onError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "75E3EB44-D7DE-4800-9098-A4E40D81DAF7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -354,6 +306,38 @@
             endingLineNumber = "53"
             landmarkName = "deinit"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "75E3EB44-D7DE-4800-9098-A4E40D81DAF7 - 5e050b17cf740b14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Movies.PopularMoviesViewController.__deallocating_deinit"
+                  moduleName = "Movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "75E3EB44-D7DE-4800-9098-A4E40D81DAF7 - 48d3ada54f8e9e8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Combine.AnyCancellable) -&gt; () in Movies.PopularMoviesViewController.deinit"
+                  moduleName = "Movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mustafaicmen/XcodeProjects/Movies/Movies/ui/movie/popularmovies/PopularMoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

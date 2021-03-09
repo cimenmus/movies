@@ -27,8 +27,7 @@ class NetworkResult<ApiResponseType: Codable, ResultType> {
             return .fail(appError)
         }
         return session.dataTaskPublisher(for: request)
-            .mapError {
-                _ in AppError(type: AppError.ErrorType.BAD_REQUEST, message: "Invalid network request") }
+            .mapError {_ in AppError(type: AppError.ErrorType.BAD_REQUEST, message: "Invalid network request") }
             .print()
             .flatMap { data, response -> AnyPublisher<Data, Error> in
                 guard let response = response as? HTTPURLResponse else {
@@ -61,6 +60,7 @@ class NetworkResult<ApiResponseType: Codable, ResultType> {
                 
             }
             .eraseToAnyPublisher()
+        
        
    }
     

@@ -33,7 +33,7 @@ class MovieRepositoryImpl: MovieRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getPopularMovies(page: Int) -> AnyPublisher<[MovieModel], AppError> {
-        return self.movieRemoteDataSource.getPopularMovies(page: page)
+        return self.movieLocalDataSource.getPopularMovies(page: page)
         /*
         return NetworkBoundResult<[MovieModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getPopularMovies(page: page) },
@@ -54,7 +54,7 @@ class MovieRepositoryImpl: MovieRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getCastOfMovie(movieId: Int) -> AnyPublisher<[MovieCastModel], AppError> {
-        return self.movieRemoteDataSource.getCastOfMovie(movieId: movieId)
+        return self.movieLocalDataSource.getCastOfMovie(movieId: movieId)
         /*
         return NetworkBoundResult<[MovieCastModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getCastOfMovie(movieId: movieId) },

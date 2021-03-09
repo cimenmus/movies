@@ -15,10 +15,8 @@ struct PersonLocalDataSource: PersonDataSource {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError> {
-        return PassthroughSubject<PersonModel, AppError>() as! AnyPublisher<PersonModel, AppError>
-        /*
         return DatabaseResult<PersonModel>(
-            dbRequest: {
+            request: {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PersonEntity")
                 request.predicate = NSPredicate(format: "id = %i", personId)
                 request.returnsObjectsAsFaults = false
@@ -40,7 +38,6 @@ struct PersonLocalDataSource: PersonDataSource {
                 }
             }
         ).execute()
-        */
     }
     
     func savePerson(person: PersonModel) {
