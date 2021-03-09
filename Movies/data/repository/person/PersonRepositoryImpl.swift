@@ -15,6 +15,7 @@ class PersonRepositoryImpl: PersonRepository {
     let networkUtils: NetworkUtils!
     let personRemoteDataSource: PersonDataSource!
     let personLocalDataSource: PersonDataSource!
+    private var cancellableSet: Set<AnyCancellable> = []
     
     // will be called by Dependency Injection
     init(networkUtils: NetworkUtils,
@@ -32,14 +33,12 @@ class PersonRepositoryImpl: PersonRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getPersonDetails(personId: Int) -> AnyPublisher<PersonModel, AppError> {
-        return self.personLocalDataSource.getPersonDetails(personId: personId)
-        /*
         return NetworkBoundResult<PersonModel>(
             loadFromNetwork: { self.personRemoteDataSource.getPersonDetails(personId: personId) },
             loadFromDb: { self.personLocalDataSource.getPersonDetails(personId: personId) },
-            saveToDb: { data in self.personLocalDataSource.savePerson(person: data)}
+            saveToDb: { data in self.personLocalDataSource.savePerson(person: data)},
+            cancellableSet: cancellableSet
         ).execute()
-        */
     }
     
     func savePerson(person: PersonModel) {

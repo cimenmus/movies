@@ -20,8 +20,8 @@ struct MovieLocalDataSource: MovieDataSource {
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieEntity")
                 let sort = NSSortDescriptor(key: #keyPath(MovieEntity.popularity), ascending: false)
                 request.sortDescriptors = [sort]
-                request.fetchLimit = Constants.Database.Movie.PAGE_LIMIT
-                request.fetchOffset = page * Constants.Database.Movie.PAGE_LIMIT
+                request.fetchLimit = Constants.Movie.PAGE_LIMIT
+                request.fetchOffset = page * Constants.Movie.PAGE_LIMIT
                 request.returnsObjectsAsFaults = false
                 
                 do {

@@ -16,6 +16,7 @@ class MovieRepositoryImpl: MovieRepository {
     let networkUtils: NetworkUtils!
     let movieRemoteDataSource: MovieDataSource!
     let movieLocalDataSource: MovieDataSource!
+    private var cancellableSet: Set<AnyCancellable> = []
     
     // will be called by Dependency Injection
     init(networkUtils: NetworkUtils,
@@ -33,7 +34,7 @@ class MovieRepositoryImpl: MovieRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getPopularMovies(page: Int) -> AnyPublisher<[MovieModel], AppError> {
-        return self.movieLocalDataSource.getPopularMovies(page: page)
+        //return self.movieLocalDataSource.getPopularMovies(page: page)
         /*
         return NetworkBoundResult<[MovieModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getPopularMovies(page: page) },
@@ -41,6 +42,12 @@ class MovieRepositoryImpl: MovieRepository {
             saveToDb: { data in self.movieLocalDataSource.saveMovies(movies: data)}
         ).execute()
         */
+        return NetworkBoundResult<[MovieModel]>(
+            loadFromNetwork: { self.movieRemoteDataSource.getPopularMovies(page: page) },
+            loadFromDb: { self.movieLocalDataSource.getPopularMovies(page: page) },
+            saveToDb: { data in self.movieLocalDataSource.saveMovies(movies: data)},
+            cancellableSet: cancellableSet
+        ).execute()
     }
     
     func saveMovies(movies: [MovieModel]) {
@@ -54,14 +61,12 @@ class MovieRepositoryImpl: MovieRepository {
      if network is not available, the data will be fetched from database and then returned
      */
     func getCastOfMovie(movieId: Int) -> AnyPublisher<[MovieCastModel], AppError> {
-        return self.movieLocalDataSource.getCastOfMovie(movieId: movieId)
-        /*
         return NetworkBoundResult<[MovieCastModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getCastOfMovie(movieId: movieId) },
             loadFromDb: { self.movieLocalDataSource.getCastOfMovie(movieId: movieId) },
-            saveToDb: { data in self.movieLocalDataSource.saveMovieCast(movieId: movieId, movieCast: data)}
+            saveToDb: { data in self.movieLocalDataSource.saveMovieCast(movieId: movieId, movieCast: data)},
+            cancellableSet: cancellableSet
         ).execute()
-        */
     }
     
     func saveMovieCast(movieId: Int, movieCast: [MovieCastModel]) {

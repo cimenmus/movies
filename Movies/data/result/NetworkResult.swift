@@ -12,7 +12,6 @@ import Alamofire
 
 class NetworkResult<ApiResponseType: Codable, ResultType> {
             
-    private let session: URLSession = URLSession.shared
     private var responseParser: ((ApiResponseType) -> ResultType)?
     
     init(responseParser: ((ApiResponseType) -> ResultType)? = nil) {
@@ -26,6 +25,12 @@ class NetworkResult<ApiResponseType: Codable, ResultType> {
             let appError = AppError(type: AppError.ErrorType.BAD_REQUEST, message: "Can not build network request")
             return .fail(appError)
         }
+        
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        let session = URLSession.init(configuration: config)
+        
         return session.dataTaskPublisher(for: request)
             .mapError {_ in AppError(type: AppError.ErrorType.BAD_REQUEST, message: "Invalid network request") }
             .print()

@@ -68,9 +68,11 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        if indexPath.row == movieList.count - 4 {
+        /*
+        if indexPath.row == movieList.count - 4 && movieList.count >= Constants.Movie.PAGE_LIMIT  {
             self.getNextPopularMovies()
         }
+        */
         cell.configureProperties(movie: movieList[indexPath.row])
         cell.selectionStyle = .none
         return cell

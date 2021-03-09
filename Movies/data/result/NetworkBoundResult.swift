@@ -6,62 +6,42 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 class NetworkBoundResult<ResultType> {
             
-    private var loadFromNetwork: () -> Single<ResultType>
-    private var loadFromDb: () -> Single<ResultType>
+    private var loadFromNetwork: () -> AnyPublisher<ResultType, AppError>
+    private var loadFromDb: () -> AnyPublisher<ResultType, AppError>
     private var saveToDb: (ResultType) -> Void
+    private var cancellableSet: Set<AnyCancellable> = []
     
-    init(loadFromNetwork: @escaping () -> Single<ResultType>,
-         loadFromDb: @escaping () -> Single<ResultType>,
-         saveToDb: @escaping (ResultType) -> Void) {
+    init(loadFromNetwork: @escaping () -> AnyPublisher<ResultType, AppError>,
+         loadFromDb: @escaping () -> AnyPublisher<ResultType, AppError>,
+         saveToDb: @escaping (ResultType) -> Void,
+         cancellableSet: Set<AnyCancellable>) {
         self.loadFromNetwork = loadFromNetwork
         self.loadFromDb = loadFromDb
         self.saveToDb = saveToDb
+        self.cancellableSet = cancellableSet
     }
     
-    func execute<ResultType>() -> Single<ResultType> {
-        return Single.create { single in
-            var error: AppError?
-            var dbDisposable: Disposable?
-            var networkDisposable: Disposable?
-            networkDisposable =
-                self.loadFromNetwork()
-                .observe(on: MainScheduler.instance)
-                .subscribe(
-                    
-                    onSuccess: { networkData in
-                        self.saveToDb(networkData)
-                        single(.success(networkData as! ResultType))
-                        networkDisposable?.dispose()
-                    },
-                    
-                    onFailure: { networkError in
-                        error = networkError.toAppError()
-                        dbDisposable =
-                            self.loadFromDb()
-                            .observe(on: MainScheduler.instance)
-                            .subscribe(
-                                onSuccess: { dbData in
-                                    single(.success(dbData as! ResultType))
-                                    networkDisposable?.dispose()
-                                    dbDisposable?.dispose()
-                                },
-                                onFailure: { dbError in
-                                    if error == nil {
-                                        error = dbError.toAppError()
-                                    }
-                                    single(.failure(error!))
-                                    networkDisposable?.dispose()
-                                    dbDisposable?.dispose()
-                                }
-                            )
-                    }
-                )
-            return Disposables.create()
-        }
+    func execute<ResultType>() -> AnyPublisher<ResultType, AppError> {
+        return NetworkBoundPublisher(loadFromNetwork: loadFromNetwork,
+                                     loadFromDb: loadFromDb,
+                                     saveToDb: saveToDb,
+                                     cancellableSet: cancellableSet)
+            .mapError { err in err as! AppError }
+            .print()
+            .flatMap { data -> AnyPublisher<ResultType, AppError> in
+                if (data is Array<AnyObject> && (data as! Array<AnyObject>).isEmpty) {
+                    let error = AppError(type: AppError.ErrorType.UNKNOWN, message: "Unknown error")
+                    return .fail(error)
+                } else {
+                    return .just(data as! ResultType)
+                }
+                
+            }
+            .eraseToAnyPublisher()
    }
     
 }

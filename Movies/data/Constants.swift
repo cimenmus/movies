@@ -27,9 +27,7 @@ struct Constants {
         }
     }
     
-    struct Database {
-        struct Movie {
-            static let PAGE_LIMIT = 20
-        }
+    struct Movie {
+        static let PAGE_LIMIT = 20
     }
 }
