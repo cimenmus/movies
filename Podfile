@@ -12,7 +12,6 @@ target 'Movies' do
   pod 'AlamofireNetworkActivityLogger', '~> 3.4'
     
   # Reactive Extensions
-  pod 'RxSwift'
   pod 'RxDataSources'
   pod 'RxSwiftExt'
   pod 'RxCocoa'

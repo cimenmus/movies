@@ -7,7 +7,6 @@
 
 import Foundation
 import Swinject
-import RxSwift
 
 // adds Assemblers to Dependency Injection
 class DependencyManager {
@@ -16,7 +15,6 @@ class DependencyManager {
     
     private let assembler = Assembler([
         DataSourceAssembly(),
-        DisposableAssembly(),
         RepositoryAssembly(),
         ViewControllerAssembly(),
         ViewModelAssembly(),

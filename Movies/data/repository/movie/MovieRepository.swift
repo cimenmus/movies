@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RxSwift
 import Combine
 
 // decides which data source is used to fetch Search data
