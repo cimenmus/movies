@@ -15,7 +15,6 @@ class PersonRepositoryImpl: PersonRepository {
     let networkUtils: NetworkUtils!
     let personRemoteDataSource: PersonDataSource!
     let personLocalDataSource: PersonDataSource!
-    private var cancellableSet: Set<AnyCancellable> = []
     
     // will be called by Dependency Injection
     init(networkUtils: NetworkUtils,
@@ -36,8 +35,7 @@ class PersonRepositoryImpl: PersonRepository {
         return NetworkBoundResult<PersonModel>(
             loadFromNetwork: { self.personRemoteDataSource.getPersonDetails(personId: personId) },
             loadFromDb: { self.personLocalDataSource.getPersonDetails(personId: personId) },
-            saveToDb: { data in self.personLocalDataSource.savePerson(person: data)},
-            cancellableSet: cancellableSet
+            saveToDb: { data in self.personLocalDataSource.savePerson(person: data)}
         ).execute()
     }
     

@@ -13,23 +13,19 @@ class NetworkBoundResult<ResultType> {
     private var loadFromNetwork: () -> AnyPublisher<ResultType, AppError>
     private var loadFromDb: () -> AnyPublisher<ResultType, AppError>
     private var saveToDb: (ResultType) -> Void
-    private var cancellableSet: Set<AnyCancellable> = []
     
     init(loadFromNetwork: @escaping () -> AnyPublisher<ResultType, AppError>,
          loadFromDb: @escaping () -> AnyPublisher<ResultType, AppError>,
-         saveToDb: @escaping (ResultType) -> Void,
-         cancellableSet: Set<AnyCancellable>) {
+         saveToDb: @escaping (ResultType) -> Void) {
         self.loadFromNetwork = loadFromNetwork
         self.loadFromDb = loadFromDb
         self.saveToDb = saveToDb
-        self.cancellableSet = cancellableSet
     }
     
     func execute<ResultType>() -> AnyPublisher<ResultType, AppError> {
         return NetworkBoundPublisher(loadFromNetwork: loadFromNetwork,
                                      loadFromDb: loadFromDb,
-                                     saveToDb: saveToDb,
-                                     cancellableSet: cancellableSet)
+                                     saveToDb: saveToDb)
             .mapError { err in err as! AppError }
             .print()
             .flatMap { data -> AnyPublisher<ResultType, AppError> in

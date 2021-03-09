@@ -14,18 +14,15 @@ class NetworkBoundSubscription<S: Subscriber, ResultType>: Subscription where S.
     private var loadFromDb: () -> AnyPublisher<ResultType, AppError>
     private var saveToDb: (ResultType) -> Void
     private var subscriber: S?
-    private var cancellableSet: Set<AnyCancellable>
     
     init(loadFromNetwork: @escaping () -> AnyPublisher<ResultType, AppError>,
          loadFromDb: @escaping () -> AnyPublisher<ResultType, AppError>,
          saveToDb: @escaping (ResultType) -> Void,
-         subscriber: S,
-         cancellableSet: Set<AnyCancellable>) {
+         subscriber: S) {
         self.loadFromNetwork = loadFromNetwork
         self.loadFromDb = loadFromDb
         self.saveToDb = saveToDb
         self.subscriber = subscriber
-        self.cancellableSet = cancellableSet
         sendRequest()
     }
     
@@ -39,39 +36,48 @@ class NetworkBoundSubscription<S: Subscriber, ResultType>: Subscription where S.
     
     private func sendRequest() {
         guard let subscriber = subscriber else { return }
+        var networkCancelable: AnyCancellable?
         
-        loadFromNetwork()
+        networkCancelable = loadFromNetwork()
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
                         case .failure(let error):
-                            self.observeDb(networkError: error)
+                            self.observeDb(networkCancelable: networkCancelable, networkError: error)
                         case .finished:
                             print("")
+                            networkCancelable?.cancel()
                     }
                 },
                 receiveValue: { value in
                     self.saveToDb(value)
                     let _ = subscriber.receive(value)
-                }).store(in: &cancellableSet)
+                    networkCancelable?.cancel()
+                })
     }
     
-    private func observeDb(networkError: AppError){
+    private func observeDb(networkCancelable: AnyCancellable?, networkError: AppError){
         guard let subscriber = subscriber else { return }
-        loadFromDb()
+        var dbCancelable: AnyCancellable?
+        dbCancelable = loadFromDb()
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
                         case .failure(let dbError):
                             subscriber.receive(completion: Subscribers.Completion.failure(networkError))
+                            networkCancelable?.cancel()
+                            dbCancelable?.cancel()
                         case .finished:
                             print("")
+                            networkCancelable?.cancel()
+                            dbCancelable?.cancel()
                     }
                 },
                 receiveValue: { value in
                     self.saveToDb(value)
                     let _ = subscriber.receive(value)
+                    networkCancelable?.cancel()
+                    dbCancelable?.cancel()
                 })
-            .store(in: &cancellableSet)
     }
 }
