@@ -335,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				1043A38125EBDFE400E7F675 /* response */,
+				1026199425F4EF1F0000F121 /* NetworkRequest.swift */,
 				1043A36E25EBDF3F00E7F675 /* ApiError.swift */,
 				1043A39E25EBE35C00E7F675 /* ApiRouter.swift */,
 			);
@@ -524,22 +525,37 @@
 		10A232CF25F1346800385E3C /* db */ = {
 			isa = PBXGroup;
 			children = (
+				10D8BCF725F91B7500F7B794 /* observable */,
 				10A233D125F143ED00385E3C /* MovieDatabase.xcdatamodeld */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		10D8BCF625F91B5B00F7B794 /* observable */ = {
+			isa = PBXGroup;
+			children = (
+				1039863A25F7D5F70081ACC9 /* NetworkBoundPublisher.swift */,
+				1039863F25F7D6080081ACC9 /* NetworkBoundSubscription.swift */,
+			);
+			path = observable;
+			sourceTree = "<group>";
+		};
+		10D8BCF725F91B7500F7B794 /* observable */ = {
+			isa = PBXGroup;
+			children = (
 				105C2C4725F7CADC00F6E8A9 /* DatabasePublisher.swift */,
 				105C2C4C25F7CB9300F6E8A9 /* DatabaseSubscription.swift */,
 			);
-			path = db;
+			path = observable;
 			sourceTree = "<group>";
 		};
 		10F2DF3325F3A760005720C0 /* result */ = {
 			isa = PBXGroup;
 			children = (
+				10D8BCF625F91B5B00F7B794 /* observable */,
 				10F2DF3425F3A76D005720C0 /* NetworkResult.swift */,
 				10F2DF3F25F3A7B6005720C0 /* DatabaseResult.swift */,
 				10F2DF4725F3A7EE005720C0 /* NetworkBoundResult.swift */,
-				1026199425F4EF1F0000F121 /* NetworkRequest.swift */,
-				1039863A25F7D5F70081ACC9 /* NetworkBoundPublisher.swift */,
-				1039863F25F7D6080081ACC9 /* NetworkBoundSubscription.swift */,
 			);
 			path = result;
 			sourceTree = "<group>";

@@ -22,7 +22,6 @@ extension CombineUseCase {
                 onSuccess: ((R) -> Void)? = nil,
                 onError: ((AppError?) -> Void)? = nil) -> AnyPublisher<R, AppError> {
         return execute(parameters: parameters)
-        
     }
     
     
