@@ -19,7 +19,8 @@ class DependencyManager {
         ViewControllerAssembly(),
         ViewModelAssembly(),
         UtilsAssembly(),
-        UseCaseAssembly()
+        UseCaseAssembly(),
+        ApiAssembly()
     ])
     
     private init() {}

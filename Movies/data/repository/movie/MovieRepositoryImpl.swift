@@ -33,13 +33,6 @@ class MovieRepositoryImpl: MovieRepository {
      */
     func getPopularMovies(page: Int) -> AnyPublisher<[MovieModel], AppError> {
         //return self.movieLocalDataSource.getPopularMovies(page: page)
-        /*
-        return NetworkBoundResult<[MovieModel]>(
-            loadFromNetwork: { self.movieRemoteDataSource.getPopularMovies(page: page) },
-            loadFromDb: { self.movieLocalDataSource.getPopularMovies(page: page) },
-            saveToDb: { data in self.movieLocalDataSource.saveMovies(movies: data)}
-        ).execute()
-        */
         return NetworkBoundResult<[MovieModel]>(
             loadFromNetwork: { self.movieRemoteDataSource.getPopularMovies(page: page) },
             loadFromDb: { self.movieLocalDataSource.getPopularMovies(page: page) },

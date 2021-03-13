@@ -11,10 +11,13 @@ import Alamofire
 
 class NetworkResult<ApiResponseType: Codable, ResultType> {
             
+    private var urlSession: URLSession
     private var responseParser: ((ApiResponseType) -> ResultType)?
     
-    init(responseParser: ((ApiResponseType) -> ResultType)? = nil) {
+    init(urlSession: URLSession,
+         responseParser: ((ApiResponseType) -> ResultType)? = nil) {
         self.responseParser = responseParser
+        self.urlSession = urlSession
     }
     
     @discardableResult
@@ -25,12 +28,7 @@ class NetworkResult<ApiResponseType: Codable, ResultType> {
             return .fail(appError)
         }
         
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalCacheData
-        config.urlCache = nil
-        let session = URLSession.init(configuration: config)
-        
-        return session.dataTaskPublisher(for: request)
+        return urlSession.dataTaskPublisher(for: request)
             .mapError {_ in AppError(type: AppError.ErrorType.BAD_REQUEST, message: "Invalid network request") }
             .print()
             .flatMap { data, response -> AnyPublisher<Data, Error> in
@@ -40,7 +38,6 @@ class NetworkResult<ApiResponseType: Codable, ResultType> {
                 }
 
                 guard 200..<300 ~= response.statusCode else {
-                    //return .fail(NetworkError.dataLoadingError(statusCode: response.statusCode, data: data))
                     let appError = AppError(type: AppError.ErrorType.BAD_REQUEST, message: "Invalid network data")
                     return .fail(appError)
                 }
